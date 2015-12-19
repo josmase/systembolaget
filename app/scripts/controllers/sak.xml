@@ -1,23 +1,54 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <artiklar>
-  <artikel number="1">
-    <nr>apa</nr>
+  <artikel>
+    <nr>101</nr>
+    <Artikelid>1</Artikelid>
+    <Varnummer>1</Varnummer>
+    <Namn>Renat</Namn>
+    <Namn2/>
+    <Prisinklmoms>205.00</Prisinklmoms>
+    <Volymiml>700.00</Volymiml>
+    <PrisPerLiter>292.86</PrisPerLiter>
+    <Saljstart>1993-10-01</Saljstart>
+    <Slutlev/>
+    <Varugrupp>Okryddad sprit</Varugrupp>
+    <Forpackning>Flaska</Forpackning>
+    <Forslutning/>
+    <Ursprung/>
+    <Ursprunglandnamn>Internationellt märke</Ursprunglandnamn>
+    <Producent>Pernod Ricard</Producent>
+    <Leverantor>Pernod Ricard Sweden AB</Leverantor>
+    <Argang/>
+    <Provadargang/>
+    <Alkoholhalt>37.50</Alkoholhalt>
+    <Sortiment>FS</Sortiment>
+    <Ekologisk>0</Ekologisk>
+    <Koscher>0</Koscher>
+    <RavarorBeskrivning>Förr potatis numera endast säd.</RavarorBeskrivning>
   </artikel>
-  <artikel number="2">
-    <nr>apa</nr>
+  <artikel>
+    <nr>7599701</nr>
+    <Artikelid>1000005</Artikelid>
+    <Varnummer>75997</Varnummer>
+    <Namn>Motzenbäcker Marie</Namn>
+    <Namn2>Riesling Weissburgunder Spätlese Trocken</Namn2>
+    <Prisinklmoms>139.00</Prisinklmoms>
+    <Volymiml>750.00</Volymiml>
+    <PrisPerLiter>185.33</PrisPerLiter>
+    <Saljstart>2015-09-01</Saljstart>
+    <Slutlev/>
+    <Varugrupp>Vitt vin</Varugrupp>
+    <Forpackning>Flaska</Forpackning>
+    <Forslutning/>
+    <Ursprung>Pfalz</Ursprung>
+    <Ursprunglandnamn>Tyskland</Ursprunglandnamn>
+    <Producent>Menger-Krug</Producent>
+    <Leverantor>Terrific Wines AB</Leverantor>
+    <Argang>2014</Argang>
+    <Provadargang/>
+    <Alkoholhalt>12.00</Alkoholhalt>
+    <Sortiment>BS</Sortiment>
+    <Ekologisk>0</Ekologisk>
+    <Koscher>0</Koscher>
   </artikel>
-  <artikel number="3">
-    <nr>apa</nr>
-  </artikel>
-  <artikel  number="4">
-    <nr>apa</nr>
-  </artikel>
-  <artikel  number="5">
-    <nr>apa</nr>
-  </artikel>
-  <artikel  number="6">
-    <nr>apa</nr>
-  </artikel>
-
-
 </artiklar>
