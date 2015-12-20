@@ -19,15 +19,28 @@ angular.module('systembolagetApp')
     };
     /**Gets data from xml file and puts it into $scope*/
     function loadData() {
-      $http.get("./scripts/controllers/sak.xml"
+      $http.get("./scripts/controllers/articles.json"
       ).
       success(function (data) {
-        $scope.articles = x2js.xml_str2json(data);
-        console.log($scope.articles);
+        $scope.articles = data;
       })
     }
 
-  }).filter('priceMatch', function() {
+  }).filter('alcohol', function() {
+  return function(input, object) {
+    var filteredAmount = [];
+    angular.forEach(input, function(item) {
+      if (Math.floor(item.Alkoholhalt) <= (object.max || 0) &&
+        Math.floor(item.Alkoholhalt) >= (object.min || 0)) {
+
+        filteredAmount.push(item);
+      }
+    });
+
+    return filteredAmount.length > 0 ? filteredAmount : [];
+  };
+})
+  .filter('priceMatch', function() {
   return function(input, object) {
     var filteredAmount = [];
     angular.forEach(input, function(item) {
@@ -40,4 +53,4 @@ angular.module('systembolagetApp')
 
     return filteredAmount.length > 0 ? filteredAmount : [];
   };
-});;
+});

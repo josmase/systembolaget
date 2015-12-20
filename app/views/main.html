@@ -3,14 +3,16 @@
     <div class="sorting">
       <input placeholder="Price (min)" ng-model="price.min" ng-init="price.min='0'">
       <input placeholder="Price (max)" ng-model="price.max" ng-init="price.max='5000'">
+      <input placeholder="Alkoholhalt (min)" ng-model="alkoholhalt.min" ng-init="alkoholhalt.min='0'">
+      <input placeholder="Alkoholhalt (max)" ng-model="alkoholhalt.max" ng-init="alkoholhalt.max='100'">
       <input placeholder="Name" ng-model="search.Namn">
       <input placeholder="Category" ng-model="search.Varugrupp">
     </div>
     <table>
       <tr>
         <th>
-          <button ng-click="order('name')">Namn</button>
-          <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+          <button ng-click="order('Namn')">Namn</button>
+          <span class="sortorder" ng-show="predicate === 'Namn'" ng-class="{reverse:reverse}"></span>
         </th>
         <th>
           <button ng-click="order('Prisinklmoms')">Pris</button>
@@ -38,8 +40,9 @@
           <span class="sortorder" ng-show="predicate === 'Forpackning'" ng-class="{reverse:reverse}"></span>
         </th>
       </tr>
-      <tr ng-repeat="object in artiklar.artikel | orderBy:predicate:reverse | limitTo:quantity | filter:search | priceMatch:price"  >
-        <td><a ng-href="http://www.systembolaget.se/?searchquery={{object.Varunummer}}">{{ object.Namn }}</a></td>
+      <tr
+        ng-repeat="object in artiklar.artikel | orderBy:predicate:reverse | limitTo:quantity | filter:search | priceMatch:price | alcohol:alkoholhalt">
+        <td><a ng-href="http://www.systembolaget.se/?searchquery={{ object.Varnummer}}">{{ object.Namn }}, {{ object.Namn2 }}</a></td>
         <td> {{ object.Prisinklmoms }}</td>
         <td> {{ object.Volymiml }}</td>
         <td> {{ object.Alkoholhalt/100 * object.PrisPerLiter | number: 3}}</td>
@@ -48,6 +51,6 @@
         <td> {{ object.Forpackning }}</td>
       </tr>
     </table>
-    <button ng-click="quantity = quantity + 10" ng-init="quantity=10">visa fler</button>
+    <button ng-click="quantity = quantity + 100" ng-init="quantity=100">visa fler</button>
   </div>
 </div>
