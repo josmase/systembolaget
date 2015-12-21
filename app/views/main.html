@@ -1,57 +1,55 @@
 <div class="wrapper">
-  <div ng-repeat="artiklar in articles">
-    <div class="sorting">
-      <input placeholder="Price (min)" ng-model="price.min" ng-init="price.min='0'">
-      <input placeholder="Price (max)" ng-model="price.max" ng-init="price.max='5000'">
-      <input placeholder="Alkoholhalt (min)" ng-model="alkoholhalt.min" ng-init="alkoholhalt.min='0'">
-      <input placeholder="Alkoholhalt (max)" ng-model="alkoholhalt.max" ng-init="alkoholhalt.max='100'">
-      <input placeholder="Name" ng-model="search.Namn">
-      <input placeholder="Category" ng-model="search.Varugrupp">
-      <input ng-model="priceMax" ng-init="priceMax=9000000">
-    </div>
-    <table>
-      <tr>
-        <th>
-          <button ng-click="order('Namn')">Namn</button>
-          <span class="sortorder" ng-show="predicate === 'Namn'" ng-class="{reverse:reverse}"></span>
-        </th>
-        <th>
-          <button ng-click="order('Prisinklmoms')">Pris</button>
-          <span class="sortorder" ng-show="predicate === 'Prisinklmoms'" ng-class="{reverse:reverse}"></span>
-        </th>
-        <th>
-          <button ng-click="order('Volymiml')">Volym</button>
-          <span class="sortorder" ng-show="predicate === 'Volymiml'" ng-class="{reverse:reverse}"></span>
-        </th>
-        <th>
-          <button ng-click="order('Alkoholhalt * PrisPerLiter')">Pris/ml alkohol</button>
-          <span class="sortorder" ng-show="predicate === 'Alkoholhalt * PrisPerLiter'"
-                ng-class="{reverse:reverse}"></span>
-        </th>
-        <th>
-          <button ng-click="order('Alkoholhalt')">Alkoholhalt</button>
-          <span class="sortorder" ng-show="predicate === 'Alkoholhalt'" ng-class="{reverse:reverse}"></span>
-        </th>
-        <th>
-          <button ng-click="order('Varugrupp')">Varugrupp</button>
-          <span class="sortorder" ng-show="predicate === 'Varugrupp'" ng-class="{reverse:reverse}"></span>
-        </th>
-        <th>
-          <button ng-click="order('Forpackning')">Forpackning</button>
-          <span class="sortorder" ng-show="predicate === 'Forpackning'" ng-class="{reverse:reverse}"></span>
-        </th>
-      </tr>
-      <tr
-        ng-repeat="object in artiklar.artikel | orderBy:predicate:reverse | limitTo:quantity | filter:search | priceMatch:price | alcohol:alkoholhalt">
-        <td><a ng-href="http://www.systembolaget.se/?searchquery={{ object.Varnummer}}">{{ object.Namn }}, {{ object.Namn2 }}</a></td>
-        <td> {{ object.Prisinklmoms }}</td>
-        <td> {{ object.Volymiml }}</td>
-        <td> {{ object.Alkoholhalt/100 * object.PrisPerLiter | number: 3}}</td>
-        <td> {{ object.Alkoholhalt }}%</td>
-        <td> {{ object.Varugrupp }}</td>
-        <td> {{ object.Forpackning }}</td>
-      </tr>
-    </table>
-    <button ng-click="quantity = quantity + 500" ng-init="quantity=100">visa fler</button>
+  <div class="sorting">
+    <form name="search-form" ng-submit="loadData()" novalidate>
+      <label>Price (min) <input type="number" ng-model="price.min"></label>
+      <label>Price (max)<input type="number" ng-model="price.max"></label>
+      <label>Alcohol (min)<input type="number" ng-model="alcohol.min"></label>
+      <label> Alcohol (max)<input type="number" ng-model="alcohol.max"></label>
+      <label>APK (min) <input type="number" ng-model="apk.min"></label>
+      <label>APK (max) <input type="number" ng-model="apk.max"></label>
+      <label>Name<input ng-model="search.name"></label>
+      <button type="submit">Sök</button>
+    </form>
   </div>
+  <table>
+    <tr>
+      <th>
+        <button ng-click="order('name')">Namn</button>
+        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+      </th>
+      <th>
+        <button ng-click="order('price')">Pris</button>
+        <span class="sortorder" ng-show="predicate === 'price'" ng-class="{reverse:reverse}"></span>
+      </th>
+      <th>
+        <button ng-click="order('price_per_liter')">Pris/liter</button>
+        <span class="sortorder" ng-show="predicate === 'price_per_liter'" ng-class="{reverse:reverse}"></span>
+      </th>
+      <th>
+        <button ng-click="order('volume')">Volym</button>
+        <span class="sortorder" ng-show="predicate === 'volume'" ng-class="{reverse:reverse}"></span>
+      </th>
+      <th>
+        <button ng-click="order('apk')">APK</button>
+          <span class="sortorder" ng-show="predicate === 'apk'"
+                ng-class="{reverse:reverse}"></span>
+      </th>
+      <th>
+        <button ng-click="order('alcohol')">Alkoholhalt</button>
+        <span class="sortorder" ng-show="predicate === 'alcohol'" ng-class="{reverse:reverse}"></span>
+      </th>
+    </tr>
+    <tr
+      ng-repeat="object in articles | orderBy:predicate:reverse | limitTo:quantity | filter: search" >
+      <td><a ng-href="http://www.systembolaget.se/?searchquery={{ object.product_number}}">{{ object.name }}, {{
+        object.name_2 }}</a></td>
+      <td> {{ object.price | currency: "Kr: ":0 }}</td>
+      <td> {{ object.price_per_liter | currency: "Kr: ":0 }}</td>
+      <td> {{ object.volume * 1000 }}</td>
+      <td> {{ object.apk}}</td>
+      <td> {{ object.alcohol * 100 | number:0 }}%</td>
+      <td> {{ object.category }}</td>
+    </tr>
+  </table>
+  <button ng-click="quantity = quantity + 500" ng-init="quantity=100">visa fler</button>
 </div>
