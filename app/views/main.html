@@ -7,6 +7,7 @@
       <input placeholder="Alkoholhalt (max)" ng-model="alkoholhalt.max" ng-init="alkoholhalt.max='100'">
       <input placeholder="Name" ng-model="search.Namn">
       <input placeholder="Category" ng-model="search.Varugrupp">
+      <input ng-model="priceMax" ng-init="priceMax=9000000">
     </div>
     <table>
       <tr>
@@ -51,6 +52,6 @@
         <td> {{ object.Forpackning }}</td>
       </tr>
     </table>
-    <button ng-click="quantity = quantity + 100" ng-init="quantity=100">visa fler</button>
+    <button ng-click="quantity = quantity + 500" ng-init="quantity=100">visa fler</button>
   </div>
 </div>

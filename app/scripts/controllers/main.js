@@ -19,9 +19,14 @@ angular.module('systembolagetApp')
     };
     /**Gets data from xml file and puts it into $scope*/
     function loadData() {
-      $http.get("./scripts/controllers/articles.json"
-      ).
+
+      $http.get('https://karlroos-systemet.p.mashape.com/product?alcohol_from=0.4&alcohol_to=1&apk_from=0&apk_to=9000&price_from=0&price_per_liter_from=0&price_per_liter_to=900000&price_to=900000',
+        {
+          headers: {'X-Mashape-Key': 'OZ9i1HXl2Hmshk5RuUK0N983D9GXp1MsAFnjsnpdlRfMKb7V6F', 'Accept' : 'application/json' }
+        })
+      .
       success(function (data) {
+        console.log(data);
         $scope.articles = data;
       })
     }
