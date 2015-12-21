@@ -1,16 +1,50 @@
 <div class="wrapper">
-  <div class="sorting">
-    <form name="search-form" ng-submit="loadData()" novalidate>
-      <label>Price (min) <input name="price-min" type="number" ng-model="price.min"></label>
-      <label>Price (max)<input name="price-max" type="number" ng-model="price.max"></label>
-      <label>Alcohol (min)<input name="alcohol-min" type="number" ng-model="alcohol.min"></label>
-      <label> Alcohol (max)<input name="alcohol-max" type="number" ng-model="alcohol.max"></label>
-      <label>APK (min) <input name="apk-min" type="number" ng-model="apk.min"></label>
-      <label>APK (max) <input name="apk-max" type="number" ng-model="apk.max"></label>
-      <label>Name<input ng-model="search.name"></label>
-      <button type="submit">Sök</button>
-    </form>
-  </div>
+
+  <form name="search-form" ng-submit="loadData()" novalidate>
+    <div class="sorting">
+      <div id="search">
+        <div class="form-group">
+          <label>Price (min) <input name="price-min" type="number" ng-model="price.min"></label>
+
+        </div>
+        <div class="form-group">
+          <label>Price (max)<input name="price-max" type="number" ng-model="price.max"></label>
+
+        </div>
+        <div class="form-group">
+          <label>Alcohol (min) <input name="alcohol-min" type="number" ng-model="alcohol.min"></label>
+
+        </div>
+        <div class="form-group">
+          <label> Alcohol (max<input name="alcohol-max" type="number" ng-model="alcohol.max"></label>
+
+        </div>
+        <div class="form-group">
+          <label>APK (min) <input name="apk-min" type="number" ng-model="apk.min"></label>
+
+        </div>
+        <div class="form-group">
+          <label>APK (max) <input name="apk-max" type="number" ng-model="apk.max"></label>
+
+        </div>
+        <div class="form-group">
+          <label>search</label>
+          <button type="submit"><i class="material-icons">&#xE8B6;</i></button>
+        </div>
+      </div>
+      <div id="filter">
+        <div class="form-group">
+          <label>Name<input ng-model="search.name"></label>
+        </div>
+        <div class="form-group">
+          <label>Category<input ng-model="search.tags.name"></label>
+          <h3>{{ results }}</h3>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
   <table>
     <tr>
       <th>
@@ -44,7 +78,7 @@
       </th>
     </tr>
     <tr
-      ng-repeat="object in articles | orderBy:predicate:reverse | limitTo:quantity | filter: search" >
+      ng-repeat="object in articles | orderBy:predicate:reverse  | filter: search">
       <td><a ng-href="http://www.systembolaget.se/?searchquery={{ object.product_number}}">{{ object.name }}, {{
         object.name_2 }}</a></td>
       <td> {{ object.price | currency: "Kr: ":0 }}</td>
@@ -52,7 +86,7 @@
       <td> {{ object.volume * 1000 }}</td>
       <td> {{ object.apk}}</td>
       <td> {{ object.alcohol * 100 | number:0 }}%</td>
-      <td ng-repeat="id in object.tags"> {{ id.name }}</td>
+      <td> {{ object.tags[0].name }} <br/> {{ object.tags[1].name }}</td>
     </tr>
   </table>
   <button ng-click="quantity = quantity + 500" ng-init="quantity=100">visa fler</button>

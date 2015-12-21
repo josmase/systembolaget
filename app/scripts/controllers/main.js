@@ -12,16 +12,16 @@ angular.module('systembolagetApp')
 
 
     $scope.alcohol = {
-      min: 0,
-      max: 100
+      min: "",
+      max: ""
     };
     $scope.price = {
-      min: 0,
-      max: 999999
+      min: "",
+      max: ""
     };
     $scope.apk = {
-      min: 2,
-      max: 200
+      min: "",
+      max: ""
     };
 
     // loadData();
@@ -49,6 +49,7 @@ angular.module('systembolagetApp')
           headers: {'X-Mashape-Key': 'OZ9i1HXl2Hmshk5RuUK0N983D9GXp1MsAFnjsnpdlRfMKb7V6F', 'Accept': 'application/json'}
         }).success(function (data) {
         console.log(data);
+        $scope.results = data.length;
         $scope.articles = data;
       })
     }
