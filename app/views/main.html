@@ -88,8 +88,8 @@
       ng-repeat="object in articles | orderBy:predicate:reverse  | filter: search">
       <td><a ng-href="http://www.systembolaget.se/?searchquery={{ object.product_number}}">{{ object.name }}, {{
         object.name_2 }}</a></td>
-      <td> {{ object.price | currency: "Kr: ":0 }}</td>
-      <td> {{ object.price_per_liter | currency: "Kr: ":0 }}</td>
+      <td> {{ object.price }}</td>
+      <td> {{ object.price_per_liter }}</td>
       <td> {{ object.volume * 1000 }}</td>
       <td> {{ object.apk}}</td>
       <td> {{ object.alcohol * 100 | number:0 }}%</td>

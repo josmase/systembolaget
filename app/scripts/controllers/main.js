@@ -48,7 +48,7 @@ angular.module('systembolagetApp')
           headers: {'X-Mashape-Key': 'OZ9i1HXl2Hmshk5RuUK0N983D9GXp1MsAFnjsnpdlRfMKb7V6F', 'Accept': 'application/json'}
         }).success(function (data) {
         console.log(data);
-        $scope.results = data.length;
+        $scope.results = "Din sökning gav " + data.length + " resultat";
         $scope.articles = data;
       });
     };

@@ -52,6 +52,7 @@ body {
 
 h1 {
   border-bottom: 2px solid black;
+  font-family: 'Slabo 27px', serif;
 }
 
 table {
@@ -92,7 +93,7 @@ table {
     }
   }
   button {
-    padding: 7px;
+    padding: 2px;
     min-height: 52px;
   }
 
@@ -157,12 +158,6 @@ button:hover {
       th:nth-child(4),td:nth-child(4) {
         display: none;
       }
-    }
-  }
-}
-@media screen and(max-width: 342px) {
-  table {
-    tr {
       th:nth-child(3),td:nth-child(3) {
         display: none;
       }
