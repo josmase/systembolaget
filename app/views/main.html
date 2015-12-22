@@ -1,22 +1,24 @@
-<div class="wrapper">
-
-  <form name="search-form" ng-submit="loadData()" novalidate>
-    <div class="sorting">
+<form name="search-form" ng-submit="loadData()" novalidate>
+  <div class="sorting">
+    <div class="wrapper">
+      <h1>Sök</h1>
       <div id="search">
+
         <div class="form-group">
-          <label>Price (min) <input name="price-min" type="number" ng-model="price.min"></label>
+
+          <label>Pris (min) <input name="price-min" type="number" ng-model="price.min"></label>
 
         </div>
         <div class="form-group">
-          <label>Price (max)<input name="price-max" type="number" ng-model="price.max"></label>
+          <label>Pris (max)<input name="price-max" type="number" ng-model="price.max"></label>
 
         </div>
         <div class="form-group">
-          <label>Alcohol (min) <input name="alcohol-min" type="number" ng-model="alcohol.min"></label>
+          <label>Alkoholhalt (min) <input name="alcohol-min" type="number" ng-model="alcohol.min"></label>
 
         </div>
         <div class="form-group">
-          <label> Alcohol (max<input name="alcohol-max" type="number" ng-model="alcohol.max"></label>
+          <label> Alkoholhalt (max<input name="alcohol-max" type="number" ng-model="alcohol.max"></label>
 
         </div>
         <div class="form-group">
@@ -28,53 +30,58 @@
 
         </div>
         <div class="form-group">
-          <label>search</label>
+
+          <label>Sök</label>
           <button type="submit"><i class="material-icons">&#xE8B6;</i></button>
         </div>
       </div>
+      <h1>Filtrera</h1>
       <div id="filter">
         <div class="form-group">
-          <label>Name<input ng-model="search.name"></label>
+          <label>Namn<input ng-model="search.name"></label>
         </div>
         <div class="form-group">
-          <label>Category<input ng-model="search.tags.name"></label>
+          <label>Kategori<input ng-model="search.tags.name"></label>
           <h3>{{ results }}</h3>
         </div>
       </div>
     </div>
-  </form>
+  </div>
+</form>
 
-
+<div class="wrapper">
   <table>
     <tr>
       <th>
-        <button ng-click="order('name')">Namn</button>
-        <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+        <button ng-click="order('name')">Namn <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span></button>
+
       </th>
       <th>
-        <button ng-click="order('price')">Pris</button>
-        <span class="sortorder" ng-show="predicate === 'price'" ng-class="{reverse:reverse}"></span>
+        <button ng-click="order('price')">Pris<span class="sortorder" ng-show="predicate === 'price'" ng-class="{reverse:reverse}"></span></button>
+
       </th>
       <th>
-        <button ng-click="order('price_per_liter')">Pris/liter</button>
-        <span class="sortorder" ng-show="predicate === 'price_per_liter'" ng-class="{reverse:reverse}"></span>
+        <button ng-click="order('price_per_liter')">Pris/liter <span class="sortorder" ng-show="predicate === 'price_per_liter'" ng-class="{reverse:reverse}"></span></button>
+
       </th>
       <th>
-        <button ng-click="order('volume')">Volym</button>
-        <span class="sortorder" ng-show="predicate === 'volume'" ng-class="{reverse:reverse}"></span>
+        <button ng-click="order('volume')">Volym <span class="sortorder" ng-show="predicate === 'volume'" ng-class="{reverse:reverse}"></span></button>
+
       </th>
       <th>
-        <button ng-click="order('apk')">APK</button>
-          <span class="sortorder" ng-show="predicate === 'apk'"
-                ng-class="{reverse:reverse}"></span>
+        <button ng-click="order('apk')">APK   <span class="sortorder" ng-show="predicate === 'apk'"
+                                                    ng-class="{reverse:reverse}"></span></button>
+
       </th>
       <th>
-        <button ng-click="order('alcohol')">Alkoholhalt</button>
-        <span class="sortorder" ng-show="predicate === 'alcohol'" ng-class="{reverse:reverse}"></span>
+        <button ng-click="order('alcohol')">Alkohol <span class="sortorder" ng-show="predicate === 'alcohol'" ng-class="{reverse:reverse}"></span></button>
+
       </th>
       <th>
-        <button ng-click="order('category')">Category</button>
-        <span class="sortorder" ng-show="predicate === 'category'" ng-class="{reverse:reverse}"></span>
+        <button ng-click="order('category')">Kategori
+          <span class="sortorder" ng-show="predicate === 'category'" ng-class="{reverse:reverse}"></span>
+        </button>
+
       </th>
     </tr>
     <tr
@@ -89,5 +96,6 @@
       <td> {{ object.tags[0].name }} <br/> {{ object.tags[1].name }}</td>
     </tr>
   </table>
-  <button ng-click="quantity = quantity + 500" ng-init="quantity=100">visa fler</button>
+
+<button ng-click="quantity = quantity + 500" ng-init="quantity=100">visa fler</button>
 </div>

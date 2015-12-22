@@ -8,24 +8,24 @@
  * Controller of the systembolagetApp
  */
 angular.module('systembolagetApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl',  function ($scope, $http) {
 
 
     $scope.alcohol = {
-      min: "",
-      max: ""
+      min: '',
+      max: ''
     };
     $scope.price = {
-      min: "",
-      max: ""
+      min: '',
+      max: ''
     };
     $scope.apk = {
-      min: "",
-      max: ""
+      min: '',
+      max: ''
     };
 
     // loadData();
-    $scope.sort = "Name";
+    $scope.sort = 'Name';
     $scope.predicate = 'name';
     $scope.reverse = true;
     $scope.order = function (predicate) {
@@ -44,15 +44,14 @@ angular.module('systembolagetApp')
         '&price_per_liter_from=0' +
         '&price_per_liter_to=900000' +
         '&price_to=' + $scope.price.max +
-        '&limit=1000'
-        , {
+        '&limit=1000', {
           headers: {'X-Mashape-Key': 'OZ9i1HXl2Hmshk5RuUK0N983D9GXp1MsAFnjsnpdlRfMKb7V6F', 'Accept': 'application/json'}
         }).success(function (data) {
         console.log(data);
         $scope.results = data.length;
         $scope.articles = data;
-      })
-    }
+      });
+    };
 
   }).filter('alcohol', function () {
     return function (input, object) {
