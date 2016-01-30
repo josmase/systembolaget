@@ -44,11 +44,11 @@ angular.module('systembolagetApp')
         '&price_per_liter_from=0' +
         '&price_per_liter_to=900000' +
         '&price_to=' + $scope.price.max +
-        '&limit=1000', {
+        '&limit=2000', {
           headers: {'X-Mashape-Key': 'OZ9i1HXl2Hmshk5RuUK0N983D9GXp1MsAFnjsnpdlRfMKb7V6F', 'Accept': 'application/json'}
         }).success(function (data) {
         console.log(data);
-        $scope.results = "Din sökning gav " + data.length + " resultat";
+        $scope.results = 'Din sökning gav ' + data.length + ' resultat';
         $scope.articles = data;
       });
     };
