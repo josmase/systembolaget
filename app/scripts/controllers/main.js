@@ -26,7 +26,7 @@ angular.module('systembolagetApp')
 
     // loadData();
     $scope.sort = 'Name';
-    $scope.predicate = 'name';
+    $scope.predicate = 'apk';
     $scope.reverse = true;
     $scope.order = function (predicate) {
       $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;

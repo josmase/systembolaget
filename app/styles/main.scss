@@ -16,34 +16,20 @@ div[ng-view] {
 * {
   box-sizing: border-box;
 }
+button{
+  border: 0;
+  outline: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  background: white;
+  font-size: 1rem;
+  padding: 0.5em;
 
+}
 body {
   padding: 0;
   margin: 0;
   background: #d5d5d5;
-}
-
-.header {
-  background-color: #CC4C3E;
-  color: white;
-
-  a {
-    color: white;
-    text-decoration: none;
-    font-family: 'Slabo 27px', serif;
-    font-size: 1.5em;
-  }
-
-  ul {
-    margin-bottom: 0;
-
-    li {
-      list-style: none;
-      margin-left: 0;
-      display: inline;
-      margin-right: 2em;
-    }
-  }
 }
 
 .wrapper {
@@ -58,11 +44,11 @@ h1 {
 table {
   width: 100%;
   .sortorder:after {
-    margin:0 0 0 auto;
+    margin: 0 0 0 auto;
     content: '\25b2';
   }
   .sortorder.reverse:after {
-    margin:0 0 0 auto;
+    margin: 0 0 0 auto;
     content: '\25bc';
   }
   tr {
@@ -100,7 +86,7 @@ table {
 }
 
 .sorting {
-  background-color: #FF7162;
+  background-color: $primary;
   padding: 1em;
 
   width: 100%;
@@ -109,8 +95,8 @@ table {
 
     display: flex;
     flex-flow: row wrap;
-
     justify-content: center;
+
     .form-group {
       margin: 0.5em;
 
@@ -121,48 +107,45 @@ table {
       font-weight: normal;
     }
     button {
-      font-size: 1rem;
-      height: 38px;
-      border: 1px solid #DEDEDE;
-      border-radius: 3px;
-      padding: 0.5em;
+      margin-top: 19px;
+      width: 202px;
     }
-
   }
 }
 
 input {
   font-size: 1rem;
-  font-family: 'Slabo 27px', serif;
   padding: 0.5em;
-  border: 1px solid #DEDEDE;
-  border-radius: 3px;
 }
 
-button {
-  background: white;
-  width: 100%;
-  border: 0;
-  outline: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+table {
+  button {
+    width: 100%;
+  }
 }
 
 button:hover {
   cursor: pointer;
 }
+#showMore{
+  width: 100%;
+}
 
 @media screen and(max-width: 430px) {
   table {
     tr {
-      th:nth-child(4),td:nth-child(4) {
+      th:first-child,td:first-child{
+        max-width: 30px;
+      }
+      th:nth-child(4), td:nth-child(4) {
         display: none;
       }
-      th:nth-child(3),td:nth-child(3) {
+      th:nth-child(3), td:nth-child(3) {
         display: none;
       }
     }
   }
+
 }
 
 @media screen and(min-width: 1140px) {
