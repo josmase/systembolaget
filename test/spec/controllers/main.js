@@ -16,4 +16,7 @@ describe('Controller: MainCtrl', function () {
       // place here mocked dependencies
     });
   }));
+  it('should hav value apk', function () {
+    expect(scope.predicate).toBe('apk');
+  });
 });

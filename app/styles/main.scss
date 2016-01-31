@@ -5,12 +5,13 @@ $secondary: #CC4C3E;
 
 $even: #102542;
 $odd: white;
-@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
 
 div[ng-view] {
   margin: 0;
   padding: 0;
+}
+p, a,input::-webkit-input-placeholder {
+  font-family: 'Roboto', sans-serif;
 }
 
 * {
@@ -131,6 +132,18 @@ button:hover {
   width: 100%;
 }
 
+footer{
+  background: $secondary;
+  text-align: center;
+  padding: 50px;
+  a{
+    background: white;
+    padding: 1.2rem;
+    color: black;
+    text-decoration: none;
+    font-size: 1.3em;
+  }
+}
 @media screen and(max-width: 430px) {
   table {
     tr {
