@@ -22,10 +22,26 @@ h1 {
   font-size: 36px;
 }
 
+label {
+  color: $primaryText;
+  font-weight: 300;
+}
+
+input, label {
+  width: 100%;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+
 p, a {
   font-family: 'Roboto', sans-serif;
   color: $lightPrimary;
   font-weight: 300;
+}
+a{
+  font-weight: 500;
+  text-decoration: none;
 }
 
 * {
@@ -75,11 +91,14 @@ table {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
     color: $lightPrimary;
-    border: 1px solid $divider;
+    min-height: 50px;
+    border-bottom: 1px solid $divider;
     td {
       padding: 7px;
+      border-width: 0;
+      margin: 0;
     }
-    td, th {
+    th {
       padding: 0;
       border-width: 0;
       margin: 0;
@@ -107,12 +126,6 @@ table {
     .form-group {
       margin: 0.5em;
       flex: 0 1 90%;
-    }
-    input, label {
-      width: 100%;
-      display: block;
-      font-family: 'Roboto', sans-serif;
-      font-weight: normal;
     }
     input, button {
       height: 50px;
@@ -142,6 +155,7 @@ button:hover {
 
 #showMore {
   width: 100%;
+  height: 50px;
 }
 
 footer {
@@ -173,8 +187,6 @@ footer {
     }
   }
 
-
-
 }
 
 @media screen and(min-width: 640px) {
@@ -187,6 +199,7 @@ footer {
     }
   }
 }
+
 @media screen and(min-width: 1140px) {
   .wrapper {
     padding: 0 10%;
