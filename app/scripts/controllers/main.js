@@ -8,23 +8,8 @@
  * Controller of the systembolagetApp
  */
 angular.module('systembolagetApp')
-  .controller('MainCtrl',  function ($scope, $http) {
-
-
-    $scope.alcohol = {
-      min: '',
-      max: ''
-    };
-    $scope.price = {
-      min: '',
-      max: ''
-    };
-    $scope.apk = {
-      min: '',
-      max: ''
-    };
-
-    // loadData();
+  .controller('MainCtrl', function ($scope, getArticlesService) {
+    $scope.search = {};
     $scope.sort = 'Name';
     $scope.predicate = 'apk';
     $scope.reverse = true;
@@ -33,24 +18,13 @@ angular.module('systembolagetApp')
       $scope.predicate = predicate;
     };
 
-    /**Gets data from xml file and puts it into $scope*/
-    $scope.loadData = function() {
-      $http.get('https://karlroos-systemet.p.mashape.com/product?' +
-        'alcohol_from=' + ($scope.alcohol.min / 100) +
-        '&alcohol_to=' + ($scope.alcohol.max / 100) +
-        '&apk_from=' + $scope.apk.min +
-        '&apk_to=' + $scope.apk.max +
-        '&price_from=' + $scope.price.min +
-        '&price_per_liter_from=0' +
-        '&price_per_liter_to=900000' +
-        '&price_to=' + $scope.price.max +
-        '&limit=2000', {
-          headers: {'X-Mashape-Key': 'OZ9i1HXl2Hmshk5RuUK0N983D9GXp1MsAFnjsnpdlRfMKb7V6F', 'Accept': 'application/json'}
-        }).success(function (data) {
+    $scope.loadData = function () {
+
+      getArticlesService.getArticles($scope.search).then((function (data) {
         console.log(data);
         $scope.results = 'Din sökning gav ' + data.length + ' resultat';
         $scope.articles = data;
-      });
+      }));
     };
 
   }).filter('alcohol', function () {
