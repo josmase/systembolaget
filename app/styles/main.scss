@@ -8,7 +8,7 @@ $accent: #9E9E9E;
 $primaryText: #212121;
 $secondaryText: #727272;
 $divider: #727272;
-$background:#FAFAFA;
+$background: #FAFAFA;
 
 div[ng-view] {
   margin: 0;
@@ -53,15 +53,11 @@ body {
   width: 100%;
 }
 
-h1 {
-  font-family: 'Slabo 27px', serif;
-}
-
 table {
   width: 100%;
-  border:0;
-  border-collapse:collapse;
-  border-spacing:0;
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
   background: $background;
 
   .sortorder:after {
@@ -72,7 +68,7 @@ table {
     margin: 0 0 0 auto;
     content: '\25bc';
   }
-  a,td{
+  a, td {
     color: $primaryText;
   }
   tr {
@@ -83,10 +79,10 @@ table {
     td {
       padding: 7px;
     }
-    td,th{
-      padding:0;
-      border-width:0;
-      margin:0;
+    td, th {
+      padding: 0;
+      border-width: 0;
+      margin: 0;
     }
   }
   button {
@@ -110,7 +106,7 @@ table {
 
     .form-group {
       margin: 0.5em;
-      flex: 0 1 49%;
+      flex: 0 1 90%;
     }
     input, label {
       width: 100%;
@@ -177,10 +173,29 @@ footer {
     }
   }
 
+
+
 }
 
+@media screen and(min-width: 640px) {
+
+  .sorting {
+    #filter, #search {
+      .form-group {
+        flex: 0 1 45%;
+      }
+    }
+  }
+}
 @media screen and(min-width: 1140px) {
   .wrapper {
     padding: 0 10%;
+  }
+  .sorting {
+    #filter, #search {
+      .form-group {
+        flex: 0 1 30%;
+      }
+    }
   }
 }

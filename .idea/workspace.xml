@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbcf129-9177-4ebe-8f0b-4dd40f0aa2c6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.scss" afterPath="$PROJECT_DIR$/app/styles/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.html" afterPath="$PROJECT_DIR$/app/views/main.html" />
     </list>
     <ignored path="systembolaget.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,10 +27,16 @@
       <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0089021">
-              <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.64688426">
+              <caret line="184" column="20" selection-start-line="184" selection-start-column="20" selection-end-line="184" selection-end-column="20" />
               <folding>
-                <element signature="e#1383#1935#0" expanded="false" />
+                <element signature="e#264#359#0" expanded="false" />
+                <element signature="e#366#450#0" expanded="false" />
+                <element signature="e#454#483#0" expanded="false" />
+                <element signature="e#492#643#0" expanded="false" />
+                <element signature="e#650#703#0" expanded="false" />
+                <element signature="e#714#732#0" expanded="false" />
+                <element signature="e#740#1339#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -278,12 +283,12 @@
       <created>1456236960912</created>
       <option name="number" value="Default" />
       <updated>1456236960912</updated>
-      <workItem from="1456236962638" duration="2934000" />
+      <workItem from="1456236962638" duration="3316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2934000" />
+    <option name="totallyTimeSpent" value="3316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
@@ -331,10 +336,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0089021">
-          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.64688426">
+          <caret line="184" column="20" selection-start-line="184" selection-start-column="20" selection-end-line="184" selection-end-column="20" />
           <folding>
-            <element signature="e#1383#1935#0" expanded="false" />
+            <element signature="e#264#359#0" expanded="false" />
+            <element signature="e#366#450#0" expanded="false" />
+            <element signature="e#454#483#0" expanded="false" />
+            <element signature="e#492#643#0" expanded="false" />
+            <element signature="e#650#703#0" expanded="false" />
+            <element signature="e#714#732#0" expanded="false" />
+            <element signature="e#740#1339#0" expanded="false" />
           </folding>
         </state>
       </provider>
