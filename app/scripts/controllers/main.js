@@ -20,7 +20,6 @@ angular.module('systembolagetApp')
     };
 
     $scope.loadData = function () {
-
       getArticlesService.getArticles($scope.search).then(function (response) {
           console.log('apa');
           $scope.results = 'Din sökning gav ' + response.length + ' resultat';

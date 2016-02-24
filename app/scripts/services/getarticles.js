@@ -18,7 +18,6 @@ angular.module('systembolagetApp')
       this.search.apkMax = search.apkMax || 100;
       this.search.priceMin = search.priceMin || 0;
       this.search.priceMax = search.priceMax || 99999;
-      console.log(this.search);
       return $http({
         method: 'GET',
         url: 'https://karlroos-systemet.p.mashape.com/product',
