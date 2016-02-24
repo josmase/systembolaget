@@ -53,41 +53,47 @@
   <table>
     <tr>
       <th>
-        <button ng-click="order('name')">Namn <span class="sortorder" ng-show="predicate === 'name'"
-                                                    ng-class="{reverse:reverse}"></span></button>
-
+        <button ng-click="order('name')">
+          Namn
+          <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+        </button>
       </th>
       <th>
-        <button ng-click="order('price')">Pris<span class="sortorder" ng-show="predicate === 'price'"
-                                                    ng-class="{reverse:reverse}"></span></button>
-
+        <button ng-click="order('price')">
+          Pris
+          <span class="sortorder" ng-show="predicate === 'price'" ng-class="{reverse:reverse}"></span>
+        </button>
       </th>
       <th>
-        <button ng-click="order('price_per_liter')">Pris/liter <span class="sortorder"
-                                                                     ng-show="predicate === 'price_per_liter'"
-                                                                     ng-class="{reverse:reverse}"></span></button>
-
-      </th>
-      <th>
-        <button ng-click="order('volume')">Volym <span class="sortorder" ng-show="predicate === 'volume'"
-                                                       ng-class="{reverse:reverse}"></span></button>
-
-      </th>
-      <th>
-        <button ng-click="order('apk')">APK   <span class="sortorder" ng-show="predicate === 'apk'"
-                                                    ng-class="{reverse:reverse}"></span></button>
-
-      </th>
-      <th>
-        <button ng-click="order('alcohol')">Alkohol <span class="sortorder" ng-show="predicate === 'alcohol'"
-                                                          ng-class="{reverse:reverse}"></span></button>
-
-      </th>
-      <th>
-        <button ng-click="order('category')">Kategori
-          <span class="sortorder" ng-show="predicate === 'category'" ng-class="{reverse:reverse}"></span>
+        <button ng-click="order('price_per_liter')">
+          Pris/liter
+          <span class="sortorder" ng-show="predicate === 'price_per_liter'" ng-class="{reverse:reverse}"></span>
         </button>
 
+      </th>
+      <th>
+        <button ng-click="order('volume')">
+          Volym
+          <span class="sortorder" ng-show="predicate === 'volume'" ng-class="{reverse:reverse}"></span>
+        </button>
+      </th>
+      <th>
+        <button ng-click="order('apk')">
+          APK
+          <span class="sortorder" ng-show="predicate === 'apk'" ng-class="{reverse:reverse}"></span>
+        </button>
+      </th>
+      <th>
+        <button ng-click="order('alcohol')">
+          Alkohol
+          <span class="sortorder" ng-show="predicate === 'alcohol'" ng-class="{reverse:reverse}"></span>
+        </button>
+      </th>
+      <th>
+        <button ng-click="order('category')">
+          Kategori
+          <span class="sortorder" ng-show="predicate === 'category'" ng-class="{reverse:reverse}"></span>
+        </button>
       </th>
     </tr>
     <tr

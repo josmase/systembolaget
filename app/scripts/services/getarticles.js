@@ -37,7 +37,6 @@ angular.module('systembolagetApp')
     // private functions
 
     function handleSuccess(res) {
-      console.log(res);
       return res.data;
     }
 

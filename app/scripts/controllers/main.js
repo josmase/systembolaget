@@ -28,33 +28,4 @@ angular.module('systembolagetApp')
         }
       )
     };
-
-  })
-  .filter('alcohol', function () {
-    return function (input, object) {
-      var filteredAmount = [];
-      angular.forEach(input, function (item) {
-        if (Math.floor(item.Alkoholhalt) <= (object.max || 0) &&
-          Math.floor(item.Alkoholhalt) >= (object.min || 0)) {
-
-          filteredAmount.push(item);
-        }
-      });
-
-      return filteredAmount.length > 0 ? filteredAmount : [];
-    };
-  })
-  .filter('priceMatch', function () {
-    return function (input, object) {
-      var filteredAmount = [];
-      angular.forEach(input, function (item) {
-        if (Math.floor(item.Prisinklmoms) <= (object.max || 0) &&
-          Math.floor(item.Prisinklmoms) >= (object.min || 0)) {
-
-          filteredAmount.push(item);
-        }
-      });
-
-      return filteredAmount.length > 0 ? filteredAmount : [];
-    };
   });
