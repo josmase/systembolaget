@@ -11,8 +11,4 @@ describe('Service: getArticles', function () {
     getArticles = _getArticles_;
   }));
 
-  it('should do something', function () {
-    expect(!!getArticles).toBe(true);
-  });
-
 });
