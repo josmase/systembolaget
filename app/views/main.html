@@ -46,8 +46,8 @@
 </form>
 
 <div class="wrapper">
-  <div id="noArticles">
-    <h2 ng-show="!articlesExists">Det finns inga annonser här just nu</h2>
+  <div ng-show="!articlesExists" id="noArticles">
+    <h2>Det finns inga annonser här just nu</h2>
   </div>
   <table ng-show="articlesExists">
     <tr>
