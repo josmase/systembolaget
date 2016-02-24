@@ -95,8 +95,7 @@
         </button>
       </th>
     </tr>
-    <tr
-      ng-repeat="object in articles | orderBy:predicate:reverse">
+    <tr ng-repeat="object in articles | orderBy:predicate:reverse" class="articles">
       <td>
         <a ng-href="http://www.systembolaget.se/?searchquery={{ object.product_number}}" target="_blank">
           {{ object.name }}, {{ object.name_2 }}
@@ -110,7 +109,4 @@
       <td> {{ object.tags[0].name }} <br/> {{ object.tags[1].name }}</td>
     </tr>
   </table>
-
-  <button id="showMore" ng-show="articlesExists" ng-click="quantity = quantity + 500" ng-init="quantity=100">visa fler
-  </button>
 </div>
