@@ -26,6 +26,6 @@ angular.module('systembolagetApp')
           $scope.articles = response;
           $scope.articlesExists = response.length > 0;
         }
-      )
+      );
     };
   });
