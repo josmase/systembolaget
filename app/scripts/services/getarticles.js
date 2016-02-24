@@ -23,12 +23,12 @@ angular.module('systembolagetApp')
         url: 'https://karlroos-systemet.p.mashape.com/product',
         headers: {'X-Mashape-Key': 'OZ9i1HXl2Hmshk5RuUK0N983D9GXp1MsAFnjsnpdlRfMKb7V6F', 'Accept': 'application/json'},
         params: {
-          alcohol_from: (this.search.alcoholMin/100),
-          alcohol_to: (this.search.alcoholMax/100),
-          apk_from: this.search.apkMin,
-          apk_to: this.search.apkMax,
-          price_from: this.search.priceMin,
-          price_to: this.search.priceMax,
+          ALCOHOL_FROM: (this.search.alcoholMin/100),
+          ALCOHOL_TO: (this.search.alcoholMax/100),
+          APK_FROM: this.search.apkMin,
+          APK_TO: this.search.apkMax,
+          PRICE_FROM: this.search.priceMin,
+          PRICE_TO: this.search.priceMax,
           limit: 500
         }
       }).then(handleSuccess, handleError('Kunde inte nå servern'));
