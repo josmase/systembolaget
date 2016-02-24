@@ -13,6 +13,7 @@ angular.module('systembolagetApp')
     $scope.sort = 'Name';
     $scope.predicate = 'apk';
     $scope.reverse = true;
+
     $scope.order = function (predicate) {
       $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
       $scope.predicate = predicate;
@@ -20,14 +21,16 @@ angular.module('systembolagetApp')
 
     $scope.loadData = function () {
 
-      getArticlesService.getArticles($scope.search).then((function (data) {
-        console.log(data);
-        $scope.results = 'Din sökning gav ' + data.length + ' resultat';
-        $scope.articles = data;
-      }));
+      getArticlesService.getArticles($scope.search).then(function (response) {
+          console.log('apa');
+          $scope.results = 'Din sökning gav ' + response.length + ' resultat';
+          $scope.articles = response;
+        }
+      )
     };
 
-  }).filter('alcohol', function () {
+  })
+  .filter('alcohol', function () {
     return function (input, object) {
       var filteredAmount = [];
       angular.forEach(input, function (item) {
