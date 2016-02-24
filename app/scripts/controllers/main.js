@@ -24,6 +24,7 @@ angular.module('systembolagetApp')
           console.log('apa');
           $scope.results = 'Din sökning gav ' + response.length + ' resultat';
           $scope.articles = response;
+          $scope.articlesExists = response.length > 0;
         }
       )
     };
