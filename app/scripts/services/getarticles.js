@@ -29,7 +29,7 @@ angular.module('systembolagetApp')
           apk_to: this.search.apkMax,
           price_from: this.search.priceMin,
           price_to: this.search.priceMax,
-          limit: 50
+          limit: 500
         }
       }).then(handleSuccess, handleError('Kunde inte nå servern'));
     };

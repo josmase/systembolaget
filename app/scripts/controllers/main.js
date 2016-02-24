@@ -22,7 +22,7 @@ angular.module('systembolagetApp')
     $scope.loadData = function () {
       getArticlesService.getArticles($scope.search).then(function (response) {
           console.log('apa');
-          $scope.results = 'Din sökning gav ' + response.length + ' resultat';
+          $scope.results = response.length;
           $scope.articles = response;
           $scope.articlesExists = response.length > 0;
         }
