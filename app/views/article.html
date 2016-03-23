@@ -6,10 +6,11 @@
 </div>
 <div class="wrapper">
   <div class="articleInfo">
+    <p>Alkohol per krona: {{article.apk}}</p>
     <p>Pris: {{article.Prisinklmoms}} Kr</p>
     <p>Volym: {{article.Volymiml}} ml</p>
     <p>Pris per liter {{article.PrisPerLiter}} Kr</p>
-    <p>Särljstart {{article.Saljstart | date:medium}}</p>
+    <p>Säljstart {{article.Saljstart | date:medium}}</p>
     <p ng-show="article.Slutlev">Slutade säljas {{article.Slutlev}}</p>
     <p>{{article.Varugrupp}}</p>
     <p>Förpackning: {{article.Forpackning}}</p>
