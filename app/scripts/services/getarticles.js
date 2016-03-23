@@ -22,12 +22,20 @@ angular.module('systembolagetApp')
       };
     }
 
+    this.getArticle = function (id) {
+      return $http({
+        method: 'GET',
+        url: 'http://localhost:8000/api/products/'+id,
+        headers: {'Accept': 'application/json'}
+      }).then(handleSuccess,handleError('kunde inte nå servern'));
+    };
+
     this.getArticles = function (search, sliders) {
       this.search = search;
       this.sliders = sliders;
       return $http({
         method: 'GET',
-        url: 'http://localhost:8000/api/products',
+        url: 'http://192.168.1.18:8000/api/products',
         headers: {'Accept': 'application/json'},
         params: {
           apkMin: (this.sliders.apk.min),
@@ -40,7 +48,7 @@ angular.module('systembolagetApp')
           Varugrupp: (this.search.category)
 
         }
-      }).then(handleSuccess,handleError("kunde inte nå servern"));
+      }).then(handleSuccess,handleError('kunde inte nå servern'));
     };
 
     this.backupApi = function (sliders) {
@@ -58,6 +66,6 @@ angular.module('systembolagetApp')
           limit: 500
         }
       }).then(handleSuccess, handleError('Kunde inte nå servern'));
-    }
+    };
   });
 
