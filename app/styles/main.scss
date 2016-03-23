@@ -1,15 +1,6 @@
 // bower:scss
 // endbower
-$primary: #4CAF50;
-$darkPrimary: #388E3C;
-$lightPrimary: #C8E6C9;
-$text: #FFFFFF;
-$accent: #9E9E9E;
-$primaryText: #212121;
-$secondaryText: #727272;
-$divider: #727272;
-$background: #FAFAFA;
-
+@import "colors";
 div[ng-view] {
   margin: 0;
   padding: 0;
