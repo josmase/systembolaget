@@ -145,11 +145,7 @@
       </th>
     </tr>
     <tr ng-repeat="object in articles | orderBy:predicate:reverse" class="articles" ng-click="go(object.Artikelid,object.Namn)">
-      <td>
-        <a ng-href="http://www.systembolaget.se/?searchquery={{ object.product_number}}" target="_blank">
-          {{ object.Namn }}, {{ object.Namn2 }}
-        </a>
-      </td>
+      <td>{{ object.Namn }}, {{ object.Namn2 }}</td>
       <td> {{ object.Prisinklmoms }}</td>
       <td> {{ object.PrisPerLiter }}</td>
       <td> {{ object.Volymiml}} ml</td>
