@@ -1,0 +1,29 @@
+<div class="sorting">
+  <div class="wrapper">
+    <h1>{{article.Namn}} {{article.Namn2}}</h1>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="articleInfo">
+    <p>Pris: {{article.Prisinklmoms}} Kr</p>
+    <p>Volym: {{article.Volymiml}} ml</p>
+    <p>Pris per liter {{article.PrisPerLiter}} Kr</p>
+    <p>Särljstart {{article.Saljstart}}</p>
+    <p ng-show="article.Slutlev">Slutade säljas {{article.Slutlev}}</p>
+    <p>{{article.Varugrupp}}</p>
+    <p>Förpackning: {{article.Forpackning}}</p>
+    <p ng-show="article.Forslutning">Förslutning {{article.Forslutning}}</p>
+    <p ng-show="article.Ursprung">Ursprung: {{article.Ursprung}}</p>
+    <p>Ursprungsland: {{article.Ursprunglandnamn}}</p>
+    <p>Producent: {{article.Producent}}</p>
+    <p>Leverantör: {{article.Leverantor}}</p>
+    <p ng-show="article.Argang">Årgång: {{article.Argang}}</p>
+    <p ng-show="article.Provadargang">Provad år: {{article.Provadargang}}</p>
+    <p>Alkkoholhalt: {{article.Alkoholhalt}}%</p>
+    <p>Ekologisk: {{article.Ekologisk}}</p>
+    <p>Etisk: {{article.Etiskt}}</p>
+    <p>Koscher: {{article.Koscher}}</p>
+    <p ng-show="article.RavarorBeskrivning">Råvarubeskrivning: {{article.RavarorBeskrivning}}</p>
+
+  </div>
+</div>
