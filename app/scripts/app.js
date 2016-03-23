@@ -18,7 +18,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'rzModule'
   ])
   .config(function ($routeProvider) {
     $routeProvider

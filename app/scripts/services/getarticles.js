@@ -10,8 +10,8 @@
 angular.module('systembolagetApp')
   .service('getArticlesService', function ($http) {
 
-    this.getArticles = function (search) {
-      this.search = search;
+    this.getArticles = function (search,sliders) {
+      /*this.search = search;
       this.search.alcoholMin = (search.alcoholMin || 0);
       this.search.alcoholMax = (search.alcoholMax || 100);
       this.search.apkMin = search.apkMin || 0;
@@ -31,7 +31,27 @@ angular.module('systembolagetApp')
           PRICE_TO: this.search.priceMax,
           limit: 500
         }
-      }).then(handleSuccess, handleError('Kunde inte nå servern'));
+
+      }).then(handleSuccess, handleError('Kunde inte nå servern'));*/
+      this.search = search;
+      this.sliders = sliders;
+      return $http({
+        method:'GET',
+        url: 'http://localhost:8080/api/products',
+        params:{
+          apkMin: (this.sliders.apk.min),
+          apkMax: (this.sliders.apk.max),
+          PrisinklmomsMin :(this.sliders.price.min),
+          PrisinklmomsMax: (this.sliders.price.max),
+          AlkoholhaltMin: (this.sliders.alcohol.min),
+          AlkoholhaltMax: (this.sliders.alcohol.max),
+          Namn:(this.search.name),
+          Varugrupp:(this.search.category)
+
+
+
+        }
+      })
     };
     // private functions
 

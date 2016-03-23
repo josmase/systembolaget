@@ -141,6 +141,15 @@ table {
     font-family: 'Roboto', sans-serif;
     color: $primaryText;
     font-weight: 300;
+    width: 100%;
+    display: inline-block;
+  }
+  .sliderNumber{
+    width: 100px;
+    display: inline-block;
+  }
+  rzslider{
+    width: 75%;
   }
   #filter, #search {
 
@@ -206,7 +215,7 @@ button:hover {
   .sorting {
     #filter, #search {
       .form-group {
-        flex: 0 1 45%;
+        flex: 0 1 100%;
       }
     }
   }
@@ -219,7 +228,7 @@ button:hover {
   .sorting {
     #filter, #search {
       .form-group {
-        flex: 0 1 30%;
+        flex: 0 1 100%;
       }
     }
   }
