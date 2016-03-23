@@ -20,7 +20,10 @@ angular.module('systembolagetApp')
         max: 450,
         options: {
           floor: 0,
-          ceil: 450
+          ceil: 450,
+          translate: function(value) {
+            return value + 'Kr';
+          }
         }
       },
       alcohol: {
@@ -28,7 +31,10 @@ angular.module('systembolagetApp')
         max: 100,
         options: {
           floor: 0,
-          ceil: 100
+          ceil: 100,
+          translate: function(value) {
+            return value + '%';
+          }
         }
       },
       apk: {
