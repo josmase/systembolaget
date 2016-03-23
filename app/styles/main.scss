@@ -31,7 +31,6 @@ h2 {
 
 label {
   color: $primaryText;
-  font-weight: 300;
 }
 
 input, label,select {
@@ -173,6 +172,7 @@ table {
       padding: 0.2em;
     }
     button {
+      margin-top: 19px;
       width: 100%;
     }
   }
