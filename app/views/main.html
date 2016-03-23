@@ -136,6 +136,19 @@
     <tr ng-repeat="object in articles | orderBy:predicate:reverse" class="articles">
       <td>
         <a ng-href="http://www.systembolaget.se/?searchquery={{ object.product_number}}" target="_blank">
+          {{ object.Namn }}, {{ object.Namn2 }}
+        </a>
+      </td>
+      <td> {{ object.Prisinklmoms }}</td>
+      <td> {{ object.PrisPerLiter }}</td>
+      <td> {{ object.Volymiml}} ml</td>
+      <td> {{ object.apk}}</td>
+      <td> {{ object.Alkoholhalt | number:2 }}%</td>
+      <td> {{ object.Varugrupp }}</td>
+    </tr>
+    <tr ng-repeat="object in articlesBackup | orderBy:predicate:reverse" class="articles">
+      <td>
+        <a ng-href="http://www.systembolaget.se/?searchquery={{ object.product_number}}" target="_blank">
           {{ object.name }}, {{ object.name_2 }}
         </a>
       </td>

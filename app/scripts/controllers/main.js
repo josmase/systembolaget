@@ -21,21 +21,24 @@ angular.module('systembolagetApp')
         options: {
           floor: 0,
           ceil: 450
-        }},
+        }
+      },
       alcohol: {
         min: 0,
         max: 100,
         options: {
           floor: 0,
           ceil: 100
-        }},
+        }
+      },
       apk: {
         min: 0,
         max: 10,
         options: {
           floor: 0,
           ceil: 10
-        }}
+        }
+      }
     };
 
     $scope.order = function (predicate) {
@@ -44,11 +47,30 @@ angular.module('systembolagetApp')
     };
 
     $scope.loadData = function () {
-      getArticlesService.getArticles($scope.search,$scope.sliders).then(function (response) {
-          $scope.results = response.length;
-          $scope.articles = response;
-          $scope.articlesExists = response.length > 0;
+      getArticlesService.getArticles($scope.search, $scope.sliders).then(function (response) {
+          console.log(!response.success);
+          if (!response.success) {
+            getArticlesService.backupApi($scope.sliders).then(function (res) {
+              $scope.backupApiUsed = true;
+              setData(res);
+            });
+          }
+          else {
+            $scope.backupApiUsed = false;
+            setData(response);
+          }
         }
       );
     };
+
+    var setData = function (response) {
+      $scope.results = response.length;
+      if($scope.backupApiUsed){
+        $scope.articlesBackup = response;
+      }
+      else{
+        $scope.articles = response;
+      }
+      $scope.articlesExists = response.length > 0;
+    }
   });
