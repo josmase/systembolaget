@@ -8,7 +8,7 @@
     <p>Pris: {{article.Prisinklmoms}} Kr</p>
     <p>Volym: {{article.Volymiml}} ml</p>
     <p>Pris per liter {{article.PrisPerLiter}} Kr</p>
-    <p>Särljstart {{article.Saljstart}}</p>
+    <p>Särljstart {{article.Saljstart | date:medium}}</p>
     <p ng-show="article.Slutlev">Slutade säljas {{article.Slutlev}}</p>
     <p>{{article.Varugrupp}}</p>
     <p>Förpackning: {{article.Forpackning}}</p>
