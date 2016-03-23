@@ -17,10 +17,11 @@ angular.module('systembolagetApp')
     $scope.sliders = {
       price: {
         min: 0,
-        max: 450,
+        max: 500,
         options: {
           floor: 0,
-          ceil: 450,
+          ceil: 2000,
+          step: 5,
           translate: function(value) {
             return value + 'Kr';
           }
@@ -84,4 +85,6 @@ angular.module('systembolagetApp')
         }
       );
     };
+
+    $scope.loadData();
   });
