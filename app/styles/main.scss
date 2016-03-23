@@ -34,7 +34,7 @@ label {
   font-weight: 300;
 }
 
-input, label {
+input, label,select {
   width: 100%;
   display: block;
   font-family: 'Roboto', sans-serif;
@@ -91,7 +91,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   background: $background;
-  margin-top:20px;
+  margin-top: 20px;
   .sortorder:after {
     margin: 0 0 0 auto;
     content: '\25b2';
@@ -120,7 +120,7 @@ table {
       margin: 0;
     }
   }
-  .articles:hover{
+  .articles:hover {
     background: #eee;
   }
   button {
@@ -137,33 +137,35 @@ table {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
-  label {
-    font-family: 'Roboto', sans-serif;
-    color: $primaryText;
-    font-weight: 300;
-    width: 100%;
-    display: inline-block;
-  }
-  .sliderNumber{
-    width: 100px;
-    display: inline-block;
-  }
-  rzslider{
-    width: 75%;
-  }
-  #filter, #search {
 
+  #filter, #search {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 
     .form-group {
-      margin: 0.5em;
-      flex: 0 1 90%;
+      flex: 0 1 100%;
+      box-sizing: border-box;
+      label, select {
+        font-family: 'Roboto', sans-serif;
+        color: $primaryText;
+        font-weight: 300;
+      }
+      .sliderNumber {
+        display: inline-block;
+        width: 60px;
+        margin: 5px;
+      }
+      rzslider {
+        display: inline-block;
+        width: calc(100% - 170px);
+        margin-right: 10px;
+        top: -10px;
+      }
     }
-    input, button {
-      height: 50px;
-      padding: 0.5em;
+    input, button, select {
+      height: 40px;
+      padding: 0.2em;
     }
     button {
       margin-top: 19px;
@@ -215,7 +217,7 @@ button:hover {
   .sorting {
     #filter, #search {
       .form-group {
-        flex: 0 1 100%;
+        flex: 0 1 50%;
       }
     }
   }
@@ -228,7 +230,7 @@ button:hover {
   .sorting {
     #filter, #search {
       .form-group {
-        flex: 0 1 100%;
+        flex: 0 1 33%;
       }
     }
   }
