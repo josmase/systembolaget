@@ -147,7 +147,7 @@ table {
       flex: 0 1 100%;
       box-sizing: border-box;
       padding: 10px;
-      label, select {
+      label, select,option {
         font-family: 'Roboto', sans-serif;
         color: $primaryText;
         font-weight: 300;
