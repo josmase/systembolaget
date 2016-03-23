@@ -10,6 +10,18 @@
 angular.module('systembolagetApp')
   .service('getArticlesService', function ($http) {
 
+    // private functions
+
+    function handleSuccess(res) {
+      return res.data;
+    }
+
+    function handleError(error) {
+      return function () {
+        return {success: false, message: error};
+      };
+    }
+
     this.getArticles = function (search,sliders) {
       /*this.search = search;
       this.search.alcoholMin = (search.alcoholMin || 0);
@@ -48,22 +60,8 @@ angular.module('systembolagetApp')
           Namn:(this.search.name),
           Varugrupp:(this.search.category)
 
-
-
         }
-      })
+      }).then(handleSuccess, handleError('Kunde inte nå servern'));
     };
-    // private functions
-
-    function handleSuccess(res) {
-      return res.data;
-    }
-
-    function handleError(error) {
-      return function () {
-        return {success: false, message: error};
-      };
-    }
-
   });
 
