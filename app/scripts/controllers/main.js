@@ -54,8 +54,7 @@ angular.module('systembolagetApp')
 
     $scope.loadData = function () {
       getArticlesService.getArticles($scope.search, $scope.sliders).then(function (response) {
-          console.log(!response.success);
-          if (!response.success) {
+          if (response.success === false) {
             getArticlesService.backupApi($scope.sliders).then(function (res) {
               $scope.backupApiUsed = true;
               setData(res);
