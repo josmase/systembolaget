@@ -16,13 +16,13 @@
           <div class="sliderNumber">
             <label>Pris
               <input name="price-min" type="number" min="0" ng-model="sliders.price.min"
-                                     placeholder="t.ex. 10"> </label>
+                     placeholder="t.ex. 10"> </label>
           </div>
           <span class="numberJoin">-</span>
           <div class="sliderNumber">
             <label>Pris
               <input name="price-max" type="number" min="0" ng-model="sliders.price.max"
-                                    placeholder="t.ex. 1000"></label>
+                     placeholder="t.ex. 1000"></label>
           </div>
         </div>
         <div class="form-group">
@@ -33,14 +33,14 @@
           <div class="sliderNumber">
             <label>Alkoholhalt
               <input name="search.alcoholMin" min="0" max="100" type="number"
-                                            ng-model="sliders.alcohol.min" placeholder="t.ex. 10"></label>
+                     ng-model="sliders.alcohol.min" placeholder="t.ex. 10"></label>
           </div>
           <span class="numberJoin">-</span>
           <div class="sliderNumber">
             <label> Alkoholhalt
               <input name="alcohol-max" type="number" min="0" max="100"
-                                           ng-model="sliders.alcohol.max"
-                                           placeholder="t.ex. 90"></label>
+                     ng-model="sliders.alcohol.max"
+                     placeholder="t.ex. 90"></label>
           </div>
         </div>
         <div class="form-group">
@@ -51,13 +51,13 @@
           <div class="sliderNumber">
             <label>APK
               <input name="apk-min" type="number" min="0" ng-model="sliders.apk.min"
-                                    placeholder="t.ex. 1"></label>
+                     placeholder="t.ex. 1"></label>
           </div>
           <span class="numberJoin">-</span>
           <div class="sliderNumber">
             <label>APK
               <input name="apk-max" type="number" ng-model="sliders.apk.max"
-                                    placeholder="t.ex. 10"></label>
+                     placeholder="t.ex. 10"></label>
           </div>
         </div>
         <div class="form-group">
@@ -65,24 +65,24 @@
         </div>
         <div class="form-group">
           <label>Kategori
-          <select ng-model="search.category">
-            <option value="">Välj en kategori</option>
-            <option value="Sprit">Sprit</option>
-            <option value="Öl">Öl</option>
-            <option value="Whisky">Whisky</option>
-            <option value="Cider">Cider</option>
-            <option value="Rött vin">Rött vin</option>
-            <option value="Vitt vin">Vitt vin</option>
-            <option value="Tequila">Tequila</option>
-            <option value="Mousserande vin">Mousserande vin</option>
-            <option value="Likör">Likör</option>
-            <option value="Cognac">Cognac</option>
-            <option value="Sherry">Sherry</option>
-            <option value="Portvin">Portvin</option>
-            <option value="Gin">Gin</option>
-            <option value="Brandy">Brandy</option>
-            <option value="Armagnac">Armagnac</option>
-          </select>
+            <select ng-model="search.category">
+              <option value="">Välj en kategori</option>
+              <option value="Sprit">Sprit</option>
+              <option value="Öl">Öl</option>
+              <option value="Whisky">Whisky</option>
+              <option value="Cider">Cider</option>
+              <option value="Rött vin">Rött vin</option>
+              <option value="Vitt vin">Vitt vin</option>
+              <option value="Tequila">Tequila</option>
+              <option value="Mousserande vin">Mousserande vin</option>
+              <option value="Likör">Likör</option>
+              <option value="Cognac">Cognac</option>
+              <option value="Sherry">Sherry</option>
+              <option value="Portvin">Portvin</option>
+              <option value="Gin">Gin</option>
+              <option value="Brandy">Brandy</option>
+              <option value="Armagnac">Armagnac</option>
+            </select>
           </label>
         </div>
         <div class="form-group">
@@ -144,7 +144,7 @@
         </button>
       </th>
     </tr>
-    <tr ng-repeat="object in articles | orderBy:predicate:reverse" class="articles">
+    <tr ng-repeat="object in articles | orderBy:predicate:reverse" class="articles" ng-click="go(object.Artikelid,object.Namn)">
       <td>
         <a ng-href="http://www.systembolaget.se/?searchquery={{ object.product_number}}" target="_blank">
           {{ object.Namn }}, {{ object.Namn2 }}

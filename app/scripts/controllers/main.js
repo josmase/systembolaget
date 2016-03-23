@@ -8,7 +8,7 @@
  * Controller of the systembolagetApp
  */
 angular.module('systembolagetApp')
-  .controller('MainCtrl', function ($scope, getArticlesService) {
+  .controller('MainCtrl', function ($scope, getArticlesService,$location) {
     $scope.search = {};
     $scope.sort = 'Name';
     $scope.predicate = 'apk';
@@ -49,6 +49,10 @@ angular.module('systembolagetApp')
       }
     };
 
+    $scope.go = function ( id,name ) {
+      $location.path( 'article/'+id+'/'+name );
+    };
+
     $scope.order = function (predicate) {
       $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
       $scope.predicate = predicate;
@@ -64,7 +68,7 @@ angular.module('systembolagetApp')
       }
       $scope.articlesExists = response.length > 0;
     };
-    
+
     $scope.loadData = function () {
       getArticlesService.getArticles($scope.search, $scope.sliders).then(function (response) {
           if (response.success === false) {
