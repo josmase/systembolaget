@@ -141,11 +141,13 @@ table {
   #filter, #search {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
     justify-content: center;
 
     .form-group {
       flex: 0 1 100%;
       box-sizing: border-box;
+      padding: 10px;
       label, select {
         font-family: 'Roboto', sans-serif;
         color: $primaryText;
@@ -154,22 +156,23 @@ table {
       .sliderNumber {
         display: inline-block;
         width: 60px;
+        margin-top: 10px;
+      }
+      .numberJoin{
         margin: 5px;
       }
       rzslider {
         display: inline-block;
-        width: calc(100% - 170px);
+        width: calc(100% - 158px);
         margin-right: 10px;
         top: -10px;
       }
     }
-    input, button, select {
+    input, button, select,button {
       height: 40px;
       padding: 0.2em;
     }
     button {
-      margin-top: 19px;
-      height: 50px;
       width: 100%;
     }
   }
@@ -226,12 +229,5 @@ button:hover {
 @media screen and(min-width: 1140px) {
   .wrapper {
     padding: 0 10%;
-  }
-  .sorting {
-    #filter, #search {
-      .form-group {
-        flex: 0 1 33%;
-      }
-    }
   }
 }
