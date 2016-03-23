@@ -10,7 +10,7 @@
 angular.module('systembolagetApp')
   .service('getArticlesService', function ($http) {
 
-    // private functions
+    var server = "http://192.168.1.18:8000/api/";
 
     function handleSuccess(res) {
       return res.data;
@@ -25,7 +25,7 @@ angular.module('systembolagetApp')
     this.getArticle = function (id) {
       return $http({
         method: 'GET',
-        url: 'http://localhost:8000/api/products/'+id,
+        url: server+'products/'+id,
         headers: {'Accept': 'application/json'}
       }).then(handleSuccess,handleError('kunde inte nå servern'));
     };
@@ -35,7 +35,7 @@ angular.module('systembolagetApp')
       this.sliders = sliders;
       return $http({
         method: 'GET',
-        url: 'http://192.168.1.18:8000/api/products',
+        url: server+'products',
         headers: {'Accept': 'application/json'},
         params: {
           apkMin: (this.sliders.apk.min),
