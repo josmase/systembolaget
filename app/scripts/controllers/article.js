@@ -9,23 +9,23 @@
  */
 angular.module('systembolagetApp')
   .controller('ArticleCtrl', function ($scope,getArticlesService,$location) {
-    var articleId = $location.path().split("/")[2];
+    var articleId = $location.path().split('/')[2];
     getArticlesService.getArticle(articleId).then(function (response) {
         $scope.article = response[0];
         if($scope.article.Ekologisk){
-          $scope.article.Ekologisk = "Ja";
+          $scope.article.Ekologisk = 'Ja';
         }else{
-          $scope.article.Ekologisk = "Nej";
+          $scope.article.Ekologisk = 'Nej';
         }
       if($scope.article.Etiskt){
-        $scope.article.Etiskt = "Ja";
+        $scope.article.Etiskt = 'Ja';
       }else{
-        $scope.article.Etiskt = "Nej";
+        $scope.article.Etiskt = 'Nej';
       }
       if($scope.article.Koscher){
-        $scope.article.Koscher = "Ja";
+        $scope.article.Koscher = 'Ja';
       }else{
-        $scope.article.Koscher = "Nej";
+        $scope.article.Koscher = 'Nej';
       }
       }
     );

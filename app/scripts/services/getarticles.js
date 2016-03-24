@@ -10,7 +10,7 @@
 angular.module('systembolagetApp')
   .service('getArticlesService', function ($http) {
 
-    var server = "http://192.168.1.18:8000/api/";
+    var server = 'http://localhost:8000/api/';
 
     function handleSuccess(res) {
       return res.data;
