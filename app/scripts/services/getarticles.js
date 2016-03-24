@@ -22,8 +22,8 @@ angular.module('systembolagetApp')
       };
     }
 
-    this.getRandomArticle = function (price) {
-      this.price = price;
+    this.getRandomArticle = function (player) {
+      this.price = player.price;
       return $http({
         method: 'GET',
         url: server+'products',
