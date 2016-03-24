@@ -22,6 +22,20 @@ angular.module('systembolagetApp')
       };
     }
 
+    this.getRandomArticle = function (price) {
+      this.price = price;
+      return $http({
+        method: 'GET',
+        url: server+'products',
+        headers: {'Accept': 'application/json'},
+        params: {
+          PrisinklmomsMin: (this.price.min),
+          PrisinklmomsMax: (this.price.max)
+        }
+      }).then(handleSuccess,handleError('kunde inte nå servern'));
+    };
+
+
     this.getArticle = function (id) {
       return $http({
         method: 'GET',
