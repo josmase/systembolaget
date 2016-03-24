@@ -33,6 +33,11 @@ angular
         controller: 'ArticleCtrl',
         controllerAs: 'article'
       })
+      .when('/slumpen', {
+        templateUrl: 'views/slumpen.html',
+        controller: 'SlumpenCtrl',
+        controllerAs: 'slumpen'
+      })
       .otherwise({
         redirectTo: '/'
       });
