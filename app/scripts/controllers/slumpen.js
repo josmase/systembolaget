@@ -10,8 +10,16 @@
 angular.module('systembolagetApp')
   .controller('SlumpenCtrl', function ($scope, getArticlesService) {
     $scope.players = [];
+    $scope.numberOfPlayers = {
+      value: 1,
+      options: {
+        floor: 0,
+        ceil: 10
+      }
+    };
     function createPlayers() {
-      for (var numberOfPlayers = 0, id = 0; numberOfPlayers < 4; numberOfPlayers++, id++) {
+      $scope.players = [];
+      for (var numberOfPlayers = 0, id = 0; numberOfPlayers < $scope.numberOfPlayers.value; numberOfPlayers++, id++) {
         $scope.players.push(
           {
             id: id,
@@ -35,6 +43,10 @@ angular.module('systembolagetApp')
       }
     }
 
+
+
+    $scope.$watch('numberOfPlayers.value',function(){createPlayers()});
+
     var setData = function (response, playerId) {
       if ($scope.article) $scope.article = null;
       var articleToUse = Math.floor((Math.random() * response.length));
@@ -55,4 +67,5 @@ angular.module('systembolagetApp')
       });
     };
     createPlayers();
-  });
+  })
+;
