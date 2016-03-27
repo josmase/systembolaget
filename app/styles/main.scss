@@ -56,7 +56,7 @@ table {
 
 }
 
-.header {
+header {
   background-color: $primary;
   padding: 1em;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -70,6 +70,7 @@ table {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
+    background: none;
   }
   .form-group {
     flex: 0 1 100%;
@@ -91,12 +92,10 @@ table {
       top: -10px;
     }
   }
-
   button {
     margin-top: 19px;
     width: 100%;
   }
-
 }
 
 #resultNumber {
@@ -131,15 +130,10 @@ table {
 
 @media screen and(min-width: 640px) {
 
-  .header {
+  header {
     .form-group {
       flex: 0 1 50%;
     }
   }
 }
 
-@media screen and(min-width: 1140px) {
-  .wrapper {
-    padding: 0 10%;
-  }
-}
