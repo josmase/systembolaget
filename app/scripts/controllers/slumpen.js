@@ -13,7 +13,7 @@ angular.module('systembolagetApp')
     $scope.numberOfPlayers = {
       value: 1,
       options: {
-        floor: 0,
+        floor: 1,
         ceil: 10
       }
     };
