@@ -79,4 +79,11 @@ body {
 
 .wrapper {
   width: 100%;
+  background: $background;
+}
+
+@media screen and(min-width: 1140px) {
+  .wrapper {
+    padding: 0 10%;
+  }
 }
