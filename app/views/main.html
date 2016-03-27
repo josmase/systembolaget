@@ -1,4 +1,4 @@
-<div class="sorting">
+<div class="header">
   <form name="search-form" ng-submit="loadData()" novalidate>
     <div class="wrapper">
       <h1>Systembolaget sök</h1>
@@ -6,88 +6,85 @@
         APK är alkohol per krona och hamnar rimligen inom 1 till 10 där 10 är mest prisvärt om du ska bli full. För mer
         information om drycken så klickar du på namnet i tabellen nedan </p>
 
-
-      <div id="search">
-        <div class="form-group">
-          <rzslider
-            rz-slider-model="sliders.price.min"
-            rz-slider-high="sliders.price.max"
-            rz-slider-options="sliders.price.options"></rzslider>
-          <div class="sliderNumber">
-            <label>Pris
-              <input name="price-min" type="number" min="0" ng-model="sliders.price.min"
-                     placeholder="t.ex. 10"> </label>
-          </div>
-          <span class="numberJoin">-</span>
-          <div class="sliderNumber">
-            <label>Pris
-              <input name="price-max" type="number" min="0" ng-model="sliders.price.max"
-                     placeholder="t.ex. 1000"></label>
-          </div>
+      <div class="form-group">
+        <rzslider
+          rz-slider-model="sliders.price.min"
+          rz-slider-high="sliders.price.max"
+          rz-slider-options="sliders.price.options"></rzslider>
+        <div class="sliderNumber">
+          <label>Pris
+            <input name="price-min" type="number" min="0" ng-model="sliders.price.min"
+                   placeholder="t.ex. 10"> </label>
         </div>
-        <div class="form-group">
-          <rzslider
-            rz-slider-model="sliders.alcohol.min"
-            rz-slider-high="sliders.alcohol.max"
-            rz-slider-options="sliders.alcohol.options"></rzslider>
-          <div class="sliderNumber">
-            <label>Alkoholhalt
-              <input name="search.alcoholMin" min="0" max="100" type="number"
-                     ng-model="sliders.alcohol.min" placeholder="t.ex. 10"></label>
-          </div>
-          <span class="numberJoin">-</span>
-          <div class="sliderNumber">
-            <label> Alkoholhalt
-              <input name="alcohol-max" type="number" min="0" max="100"
-                     ng-model="sliders.alcohol.max"
-                     placeholder="t.ex. 90"></label>
-          </div>
+        <span class="numberJoin">-</span>
+        <div class="sliderNumber">
+          <label>Pris
+            <input name="price-max" type="number" min="0" ng-model="sliders.price.max"
+                   placeholder="t.ex. 1000"></label>
         </div>
-        <div class="form-group">
-          <rzslider
-            rz-slider-model="sliders.apk.min"
-            rz-slider-high="sliders.apk.max"
-            rz-slider-options="sliders.apk.options"></rzslider>
-          <div class="sliderNumber">
-            <label>APK
-              <input name="apk-min" type="number" min="0" ng-model="sliders.apk.min"
-                     placeholder="t.ex. 1"></label>
-          </div>
-          <span class="numberJoin">-</span>
-          <div class="sliderNumber">
-            <label>APK
-              <input name="apk-max" type="number" ng-model="sliders.apk.max"
-                     placeholder="t.ex. 10"></label>
-          </div>
+      </div>
+      <div class="form-group">
+        <rzslider
+          rz-slider-model="sliders.alcohol.min"
+          rz-slider-high="sliders.alcohol.max"
+          rz-slider-options="sliders.alcohol.options"></rzslider>
+        <div class="sliderNumber">
+          <label>Alkoholhalt
+            <input name="search.alcoholMin" min="0" max="100" type="number"
+                   ng-model="sliders.alcohol.min" placeholder="t.ex. 10"></label>
         </div>
-        <div class="form-group">
-          <label>Namn<input type="text" ng-model="search.name" placeholder="T.ex. dworek"></label>
+        <span class="numberJoin">-</span>
+        <div class="sliderNumber">
+          <label> Alkoholhalt
+            <input name="alcohol-max" type="number" min="0" max="100"
+                   ng-model="sliders.alcohol.max"
+                   placeholder="t.ex. 90"></label>
         </div>
-        <div class="form-group">
-          <label>Kategori
-            <select ng-model="search.category">
-              <option value="">Välj en kategori</option>
-              <option value="Sprit">Sprit</option>
-              <option value="Öl">Öl</option>
-              <option value="Whisky">Whisky</option>
-              <option value="Cider">Cider</option>
-              <option value="Rött vin">Rött vin</option>
-              <option value="Vitt vin">Vitt vin</option>
-              <option value="Tequila">Tequila</option>
-              <option value="Mousserande vin">Mousserande vin</option>
-              <option value="Likör">Likör</option>
-              <option value="Cognac">Cognac</option>
-              <option value="Sherry">Sherry</option>
-              <option value="Portvin">Portvin</option>
-              <option value="Gin">Gin</option>
-              <option value="Brandy">Brandy</option>
-              <option value="Armagnac">Armagnac</option>
-            </select>
-          </label>
+      </div>
+      <div class="form-group">
+        <rzslider
+          rz-slider-model="sliders.apk.min"
+          rz-slider-high="sliders.apk.max"
+          rz-slider-options="sliders.apk.options"></rzslider>
+        <div class="sliderNumber">
+          <label>APK
+            <input name="apk-min" type="number" min="0" ng-model="sliders.apk.min"
+                   placeholder="t.ex. 1"></label>
         </div>
-        <div class="form-group">
-          <button type="submit">Sök</button>
+        <span class="numberJoin">-</span>
+        <div class="sliderNumber">
+          <label>APK
+            <input name="apk-max" type="number" ng-model="sliders.apk.max"
+                   placeholder="t.ex. 10"></label>
         </div>
+      </div>
+      <div class="form-group">
+        <label>Namn<input type="text" ng-model="search.name" placeholder="T.ex. dworek"></label>
+      </div>
+      <div class="form-group">
+        <label>Kategori
+          <select ng-model="search.category">
+            <option value="">Välj en kategori</option>
+            <option value="Sprit">Sprit</option>
+            <option value="Öl">Öl</option>
+            <option value="Whisky">Whisky</option>
+            <option value="Cider">Cider</option>
+            <option value="Rött vin">Rött vin</option>
+            <option value="Vitt vin">Vitt vin</option>
+            <option value="Tequila">Tequila</option>
+            <option value="Mousserande vin">Mousserande vin</option>
+            <option value="Likör">Likör</option>
+            <option value="Cognac">Cognac</option>
+            <option value="Sherry">Sherry</option>
+            <option value="Portvin">Portvin</option>
+            <option value="Gin">Gin</option>
+            <option value="Brandy">Brandy</option>
+            <option value="Armagnac">Armagnac</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-group">
+        <button type="submit">Sök</button>
       </div>
     </div>
     <p ng-show="articlesExists" id="resultNumber"><span>Din sökning gav {{ results }} resultat</span></p>
@@ -144,7 +141,8 @@
         </button>
       </th>
     </tr>
-    <tr ng-repeat="object in articles | orderBy:predicate:reverse" class="articles" ng-click="go(object.Artikelid,object.Namn)">
+    <tr ng-repeat="object in articles | orderBy:predicate:reverse" class="articles"
+        ng-click="go(object.Artikelid,object.Namn)">
       <td>{{ object.Namn }}, {{ object.Namn2 }}</td>
       <td> {{ object.Prisinklmoms }}</td>
       <td> {{ object.PrisPerLiter }}</td>
