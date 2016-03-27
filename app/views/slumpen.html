@@ -1,5 +1,27 @@
+<header>
+  <div class="wrapper">
+    <div class="form-group">
+      <h1>
+        Slumpen
+      </h1>
+      <p>
+        Välj hur många flaskor sprit som behövs och slumpa sedan fram några flaskor
+      </p>
+    </div>
+    <div class="form-group">
+      <rzslider
+        rz-slider-model="numberOfPlayers.value"
+        rz-slider-options="numberOfPlayers.options"></rzslider>
+      <div class="sliderNumber">
+        <label>Antal Spelare
+          <input name="numberOfPlayers" type="number" min="1" ng-model="numberOfPlayers.value"
+                 placeholder="t.ex. 3"> </label>
+      </div>
+    </div>
+  </div>
+</header>
 <div class="wrapper">
-  <div ng-repeat="player in players">
+  <div class="player" ng-repeat="player in players">
     <form name="slumpen-form" ng-submit='loadData(player)' novalidate>
       <div class="form-group">
         <rzslider
@@ -17,13 +39,18 @@
             <input name="price-max" type="number" min="0" ng-model="player.price.max"
                    placeholder="t.ex. 1000"></label>
         </div>
-      </div>
-      <div class="form-group">
         <button type="submit">Ge mig sprit</button>
       </div>
-      {{player.article.apk}}
+
     </form>
+    <div class="article" ng-show="player.article.Namn">
+      <h2>{{player.article.Namn}}</h2>
+      <p>Pris: {{player.article.Prisinklmoms}}Kr</p>
+      <p>APK: {{player.article.apk}}</p>
+      <p>Kategori: {{player.article.Varugrupp}}</p>
+      <p>Volym: {{player.article.Volymiml}}ml</p>
+      <a href="#/article/{{player.article.Artikelid}}/{{player.article.Namn}}">Mer information</a>
+    </div>
   </div>
   <button ng-click="loadAllPlayers()">Ge alla sprit</button>
 </div>
-
