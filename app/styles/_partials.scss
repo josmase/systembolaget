@@ -1,0 +1,82 @@
+button {
+  border: 0;
+  outline: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  background: $accent;
+  font-size: 1rem;
+  padding: 0.5em;
+
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input, button, select {
+  height: 40px;
+  padding: 0.2em;
+}
+
+label, select, option {
+  font-family: 'Roboto', sans-serif;
+  color: $primaryText;
+  font-weight: 300;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  color: $text;
+  font-weight: 300;
+  font-size: 36px;
+}
+
+h2, h3, h4 {
+  font-family: 'Roboto', sans-serif;
+  color: $primaryText;
+  font-weight: 300;
+}
+
+label {
+  color: $primaryText;
+}
+
+input, label, select {
+  width: 100%;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+
+p, a, td {
+  font-family: 'Roboto', sans-serif;
+  color: $primaryText;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div[ng-view] {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #d5d5d5;
+}
+
+.wrapper {
+  width: 100%;
+}
