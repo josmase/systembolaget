@@ -7,7 +7,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/_colors.scss" afterPath="$PROJECT_DIR$/app/styles/_colors.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.scss" afterPath="$PROJECT_DIR$/app/styles/main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/slumpen.scss" afterPath="$PROJECT_DIR$/app/styles/slumpen.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/article.html" afterPath="$PROJECT_DIR$/app/views/article.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/slumpen.html" afterPath="$PROJECT_DIR$/app/views/slumpen.html" />
     </list>
     <ignored path="systembolaget.iws" />
@@ -805,7 +804,7 @@
       <workItem from="1458803788209" duration="209000" />
       <workItem from="1458819842801" duration="7000" />
       <workItem from="1458819866908" duration="3744000" />
-      <workItem from="1459097081349" duration="6203000" />
+      <workItem from="1459097081349" duration="6258000" />
     </task>
     <task id="LOCAL-00001" summary="code style errors">
       <created>1458821925717</created>
@@ -849,11 +848,18 @@
       <option name="project" value="LOCAL" />
       <updated>1459108264685</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Move name 2 to own h4 tag">
+      <created>1459108316945</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1459108316945</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34872000" />
+    <option name="totallyTimeSpent" value="34927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -890,6 +896,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <MESSAGE value="added sliders" />
     <MESSAGE value="code style errors" />
     <MESSAGE value="new route slumpen" />
@@ -897,7 +904,8 @@
     <MESSAGE value="styles that are the same over the whole page" />
     <MESSAGE value="styling for the sliders" />
     <MESSAGE value="remove style for p tag and remove box sizing for articleInfo" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove style for p tag and remove box sizing for articleInfo" />
+    <MESSAGE value="Move name 2 to own h4 tag" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move name 2 to own h4 tag" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
