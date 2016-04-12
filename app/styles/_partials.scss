@@ -18,10 +18,12 @@ input, button, select {
   padding: 0.2em;
 }
 
-label, select, option {
+label, select, option,input,select {
   font-family: 'Roboto', sans-serif;
   color: $primaryText;
   font-weight: 300;
+  width: 100%;
+  display: block;
 }
 
 h1 {
@@ -35,17 +37,6 @@ h2, h3, h4 {
   font-family: 'Roboto', sans-serif;
   color: $primaryText;
   font-weight: 300;
-}
-
-label {
-  color: $primaryText;
-}
-
-input, label, select {
-  width: 100%;
-  display: block;
-  font-family: 'Roboto', sans-serif;
-  font-weight: normal;
 }
 
 p, a, td {
