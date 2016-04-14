@@ -20,8 +20,9 @@ angular.module('systembolagetApp')
         max: 500,
         options: {
           floor: 0,
-          ceil: 2000,
-          step: 5,
+          ceil: 500,
+          step: 1,
+          hideLimitLabels: true,
           translate: function(value) {
             return value + 'Kr';
           }
@@ -33,6 +34,7 @@ angular.module('systembolagetApp')
         options: {
           floor: 0,
           ceil: 100,
+          hideLimitLabels: true,
           translate: function(value) {
             return value + '%';
           }
@@ -44,6 +46,7 @@ angular.module('systembolagetApp')
         options: {
           floor: 0,
           ceil: 5,
+          hideLimitLabels: true,
           precision: 2,
           step: 0.1
         }
