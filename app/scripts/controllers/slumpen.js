@@ -31,8 +31,9 @@ angular.module('systembolagetApp')
               max: 500,
               options: {
                 floor: 0,
-                ceil: 2000,
+                ceil: 500,
                 step: 5,
+                hideLimitLabels: true,
                 translate: function (value) {
                   return value + 'Kr';
                 }
@@ -44,8 +45,9 @@ angular.module('systembolagetApp')
     }
 
 
-
-    $scope.$watch('numberOfPlayers.value',function(){createPlayers()});
+    $scope.$watch('numberOfPlayers.value', function () {
+      createPlayers()
+    });
 
     var setData = function (response, playerId) {
       if ($scope.article) $scope.article = null;
