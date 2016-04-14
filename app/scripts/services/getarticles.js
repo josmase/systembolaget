@@ -39,7 +39,7 @@ angular.module('systembolagetApp')
     this.getArticle = function (id) {
       return $http({
         method: 'GET',
-        url: server+'products/'+id,
+        url: server+'product/'+id,
         headers: {'Accept': 'application/json'}
       }).then(handleSuccess,handleError('kunde inte nå servern'));
     };
