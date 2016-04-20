@@ -13,7 +13,7 @@ angular.module('systembolagetApp')
       var functions = {};
 
       function handleSuccess(result) {
-        return result;
+        return result.data;
       }
 
       function handleError(error) {
