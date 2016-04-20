@@ -8,7 +8,7 @@
  * Controller of the systembolagetApp
  */
 angular.module('systembolagetApp')
-  .controller('MainCtrl', function ($scope, getArticlesService,$location) {
+  .controller('MainCtrl', function ($scope, getArticlesService, $location, storesService) {
     $scope.search = {};
     $scope.sort = 'Name';
     $scope.predicate = 'apk';
@@ -23,7 +23,7 @@ angular.module('systembolagetApp')
           ceil: 500,
           step: 1,
           hideLimitLabels: true,
-          translate: function(value) {
+          translate: function (value) {
             return value + 'Kr';
           }
         }
@@ -35,7 +35,7 @@ angular.module('systembolagetApp')
           floor: 0,
           ceil: 100,
           hideLimitLabels: true,
-          translate: function(value) {
+          translate: function (value) {
             return value + '%';
           }
         }
@@ -53,8 +53,8 @@ angular.module('systembolagetApp')
       }
     };
 
-    $scope.go = function ( id,name ) {
-      $location.path( 'article/'+id+'/'+name );
+    $scope.go = function (id, name) {
+      $location.path('article/' + id + '/' + name);
     };
 
     $scope.order = function (predicate) {
@@ -62,18 +62,18 @@ angular.module('systembolagetApp')
       $scope.predicate = predicate;
     };
 
-    var setData = function (response) {
+    function setData(response) {
       $scope.results = response.length;
-      if($scope.backupApiUsed){
+      if ($scope.backupApiUsed) {
         $scope.articlesBackup = response;
       }
-      else{
+      else {
         $scope.articles = response;
       }
       $scope.articlesExists = response.length > 0;
-    };
+    }
 
-    $scope.loadData = function () {
+    function loadData() {
       getArticlesService.getArticles($scope.search, $scope.sliders).then(function (response) {
           if (response.success === false) {
             getArticlesService.backupApi($scope.sliders).then(function (res) {
@@ -87,7 +87,23 @@ angular.module('systembolagetApp')
           }
         }
       );
-    };
+    }
 
-    $scope.loadData();
+    function getStores() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          console.log(position);
+        });
+        navigator.geolocation.getCurrentPosition(function (position) {
+
+          storesService.getStoresLatLon(position.coords,
+            (error)=>$scope.stores = ["Kunde inte hämta din position"])
+            .then((stores)=>$scope.stores = stores)
+            .catch((error)=>console.log(error))
+        });
+      }
+    }
+
+    loadData();
+    getStores();
   });
