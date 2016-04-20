@@ -13,19 +13,15 @@ angular.module('systembolagetApp')
     return function (input, index) {
       var regex = /([0-9][^;]{9});([0-9].{4});([0-9].{4});;;(.[^;]*);/g;
       var matched;
-      if (typeof index === 'number') {
+      if (typeof index === 'number' && input !=null) {
         matched = matchAll(input, regex)[index];
         if (matched[4] === '-') {
-          return 'Stängt'
+           'Stängt'
         }
         else if (matched[4] == 0) {
           return matched[2] + " - " + matched[3];
         }
         return matched[4];
-      }
-      else {
-        matched = matchAll(input, regex);
-        return matched;
       }
     };
     function matchAll(input, regexp) {

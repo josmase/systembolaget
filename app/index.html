@@ -15,8 +15,8 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.css' />
-  <link rel='stylesheet' href='bower_components/angularjs-slider/dist/rzslider.css' />
+  <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.css'/>
+  <link rel='stylesheet' href='bower_components/angularjs-slider/dist/rzslider.css'/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -32,10 +32,12 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
 <![endif]-->
-<nav>
+<nav ng-controller="NavcontrollerCtrl as nav">
   <div class="wrapper">
     <a href="#/home">Start</a>
     <a href="#/slumpen">Slumpen</a>
+    <p>{{store.Namn}}<span nf-if="!store.Namn">{{store.address1}}</span> {{store.Oppettider | openingHoursFilter:1}}
+      {{store.distance}}<span ng-if="store.distance">m</span></p>
   </div>
 </nav>
 <!-- Add your site or application content here -->
@@ -52,7 +54,7 @@
       </svg>
     </div>
   </div>
-  <style type = "text/css" scoped>
+  <style type="text/css" scoped>
     .showbox {
       flex: 1 0 100%;
       padding: 5%;
@@ -63,6 +65,7 @@
       margin: 0px auto;
       width: 100px;
     }
+
     .loader:before {
       content: '';
       display: block;
@@ -85,7 +88,7 @@
     }
 
     .path {
-      stroke-dasharray: 1,200;
+      stroke-dasharray: 1, 200;
       stroke-dashoffset: 0;
       -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
       animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
@@ -105,34 +108,37 @@
         transform: rotate(360deg);
       }
     }
+
     @-webkit-keyframes dash {
       0% {
-        stroke-dasharray: 1,200;
+        stroke-dasharray: 1, 200;
         stroke-dashoffset: 0;
       }
       50% {
-        stroke-dasharray: 89,200;
+        stroke-dasharray: 89, 200;
         stroke-dashoffset: -35px;
       }
       100% {
-        stroke-dasharray: 89,200;
+        stroke-dasharray: 89, 200;
         stroke-dashoffset: -124px;
       }
     }
+
     @keyframes dash {
       0% {
-        stroke-dasharray: 1,200;
+        stroke-dasharray: 1, 200;
         stroke-dashoffset: 0;
       }
       50% {
-        stroke-dasharray: 89,200;
+        stroke-dasharray: 89, 200;
         stroke-dashoffset: -35px;
       }
       100% {
-        stroke-dasharray: 89,200;
+        stroke-dasharray: 89, 200;
         stroke-dashoffset: -124px;
       }
     }
+
     @-webkit-keyframes color {
       100%, 0% {
         stroke: #d62d20;
@@ -147,6 +153,7 @@
         stroke: #ffa700;
       }
     }
+
     @keyframes color {
       100%, 0% {
         stroke: #d62d20;
@@ -163,7 +170,6 @@
     }
   </style>
 </div>
-
 
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -204,6 +210,7 @@
 <script src="scripts/services/storesservice.js"></script>
 <script src="scripts/filters/openinghoursfilter.js"></script>
 <script src="scripts/services/geocodeservice.js"></script>
+<script src="scripts/controllers/navcontroller.js"></script>
 <!-- endbuild -->
 </body>
 </html>

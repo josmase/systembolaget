@@ -8,7 +8,7 @@
  * Controller of the systembolagetApp
  */
 angular.module('systembolagetApp')
-  .controller('MainCtrl', function ($scope, getArticlesService, $location, storesService) {
+  .controller('MainCtrl', function ($scope, getArticlesService, $location) {
     $scope.search = {};
     $scope.sort = 'Name';
     $scope.predicate = 'apk';
@@ -89,21 +89,8 @@ angular.module('systembolagetApp')
       );
     }
 
-    function getStores() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-          console.log(position);
-        });
-        navigator.geolocation.getCurrentPosition(function (position) {
-
-          storesService.getStoresLatLon(position.coords,
-            (error)=>$scope.stores = ["Kunde inte hämta din position"])
-            .then((stores)=>$scope.stores = stores)
-            .catch((error)=>console.log(error))
-        });
-      }
-    }
+    
 
     loadData();
-    getStores();
+    
   });

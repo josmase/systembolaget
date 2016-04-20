@@ -3,18 +3,6 @@
     <div class="wrapper">
 
       <h1>Systembolaget sök</h1>
-      <div ng-repeat="store in stores">
-        <div ng-if="store.Namn" class="storeheader">
-          <h3>{{store.Namn}}</h3>
-          <p>{{store.Address1}}
-          <p>
-        </div>
-        <div ng-if="!store.Namn" class="storeheader">
-          <h3>{{store.Address1}}</h3>
-          <p>{{store.Address4}}</p>
-        </div>
-        <p>{{store.Oppettider | openingHoursFilter:1}}</p>
-      </div>
       <p>Fyll i alla rutor i formuläret för att filtrera hur mycket det ska kosta, hur många % det ska vara (50 = 50%).
         APK är alkohol per krona och hamnar rimligen inom 1 till 10 där 10 är mest prisvärt om du ska bli full. För mer
         information om drycken så klickar du på namnet i tabellen nedan </p>
