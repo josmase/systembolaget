@@ -15,8 +15,8 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.css'/>
-  <link rel='stylesheet' href='bower_components/angularjs-slider/dist/rzslider.css'/>
+  <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.css' />
+  <link rel='stylesheet' href='bower_components/angularjs-slider/dist/rzslider.css' />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -36,7 +36,7 @@
   <div class="wrapper">
     <a href="#/home">Start</a>
     <a href="#/slumpen">Slumpen</a>
-    <p>{{store.Namn}}<span nf-if="!store.Namn">{{store.address1}}</span> {{store.Oppettider | openingHoursFilter:1}}
+    <p>{{store.Namn}}<span nf-if="!store.Namn">{{store.address1}}</span> {{store.Oppettider | openingHoursFilter:0}}
       {{store.distance}}<span ng-if="store.distance">m</span></p>
   </div>
 </nav>

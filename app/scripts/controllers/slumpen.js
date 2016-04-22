@@ -40,17 +40,19 @@ angular.module('systembolagetApp')
               }
             }
           }
-        )
+        );
       }
     }
 
 
     $scope.$watch('numberOfPlayers.value', function () {
-      createPlayers()
+      createPlayers();
     });
 
     var setData = function (response, playerId) {
-      if ($scope.article) $scope.article = null;
+      if ($scope.article) {
+        $scope.article = null;
+      }
       var articleToUse = Math.floor((Math.random() * response.length));
       $scope.players[playerId].article = response[articleToUse];
     };

@@ -17,7 +17,7 @@ angular.module('systembolagetApp')
       }
 
       function handleError(error) {
-        return {success: false, error: error}
+        return {success: false, error: error};
       }
 
       function getStoresLatLon(position) {
@@ -33,6 +33,6 @@ angular.module('systembolagetApp')
       }
 
       functions.getStoresLatLon = getStoresLatLon;
-      return functions
+      return functions;
     }
   );

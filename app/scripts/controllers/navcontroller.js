@@ -12,7 +12,7 @@ angular.module('systembolagetApp')
 
     function nearestStore(stores) {
       var nearest = stores[0];
-      stores.map(store => {
+      stores.map(function (store) {
         if (store.distance < nearest) {
           nearest = store;
         }
@@ -28,7 +28,9 @@ angular.module('systembolagetApp')
             storeLocation = storeLocation.results[0].geometry.location;
             store.distance = geocodeService.getDistanceFromLatLon(position.coords, storeLocation);
           })
-          .catch((err)=>console.log(err))
+          .catch(function (err) {
+            console.log(err);
+          });
       });
       nearestStore(stores);
     }
@@ -37,9 +39,15 @@ angular.module('systembolagetApp')
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
           storesService.getStoresLatLon(position.coords,
-            (error)=>console.log(error))
-            .then((stores)=>calculateDistance(position, stores))
-            .catch((error)=>error);
+            function (error) {
+              console.log(error);
+            })
+            .then(function (stores) {
+              calculateDistance(position, stores);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
         });
       }
     }

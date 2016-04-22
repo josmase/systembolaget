@@ -8,7 +8,7 @@
  * Service in the systembolagetApp.
  */
 angular.module('systembolagetApp')
-  .service('geocodeService', function ($http, $q) {
+  .service('geocodeService', function ($http) {
 
     function handleSuccess(res) {
       return res.data;
@@ -23,14 +23,14 @@ angular.module('systembolagetApp')
     var functions = {};
 
     function geocode(store) {
-      this.address = store.Address1;
-      this.city = store.Address4;
+      var address = store.Address1;
+      var city = store.Address4;
       return $http({
         method: 'GET',
         url: 'https://maps.googleapis.com/maps/api/geocode/json',
         dataType: 'json',
         params: {
-          address: this.city + ',' + this.address,
+          address: city + ',' + address,
           key: 'AIzaSyAz9VB62M7bhTVi5qmToMnrqdbQjq5Xugk'
         }
       }).then(handleSuccess, handleError('kunde inte nå servern'));
