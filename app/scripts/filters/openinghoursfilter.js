@@ -10,20 +10,6 @@
  */
 angular.module('systembolagetApp')
   .filter('openingHoursFilter', function () {
-    return function (input, index) {
-      var regex = /([0-9][^;]{9});([0-9].{4});([0-9].{4});;;(.[^;]*);/g;
-      var matched;
-      if (typeof index === 'number' && input !=null) {
-        matched = matchAll(input, regex)[index];
-        if (matched[4] === '-') {
-           'Stängt'
-        }
-        else if (matched[4] == 0) {
-          return matched[2] + " - " + matched[3];
-        }
-        return matched[4];
-      }
-    };
     function matchAll(input, regexp) {
       var matches = [];
       input.replace(regexp, function () {
@@ -36,5 +22,19 @@ angular.module('systembolagetApp')
       return matches.length ? matches : null;
     }
 
-
+    return function (input, index) {
+      var regex = /([0-9][^;]{9});([0-9].{4});([0-9].{4});;;(.[^;]*);/g;
+      var matched;
+      if (typeof index === 'number' && typeof input !== 'undefined') {
+        matched = matchAll(input, regex)[index];
+        console.log(matchAll(input, regex));
+        if (matched[4] === '-') {
+          return 'Stängt';
+        }
+        else if (matched[4] === '0') {
+          return matched[2] + ' - ' + matched[3];
+        }
+        return matched[4];
+      }
+    };
   });
