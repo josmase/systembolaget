@@ -9,7 +9,7 @@
  */
 angular.module('systembolagetApp')
   .service('storesService', function ($http) {
-      var server = 'http://localhost:8000/api/';
+      var server = 'https://api.josmase.xyz/api/';
       var functions = {};
 
       function handleSuccess(result) {
