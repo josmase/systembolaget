@@ -13,7 +13,12 @@ angular.module('systembolagetApp')
     $scope.sort = 'Name';
     $scope.predicate = 'apk';
     $scope.reverse = true;
-
+    $scope.modalShown = false;
+    $scope.toggleModal = function (product) {
+      console.log(product);
+      $scope.product = product;
+      $scope.modalShown = !$scope.modalShown;
+    };
     $scope.sliders = {
       price: {
         min: 0,
@@ -89,8 +94,6 @@ angular.module('systembolagetApp')
       );
     }
 
-    
 
     loadData();
-    
   });

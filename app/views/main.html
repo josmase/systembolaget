@@ -91,9 +91,8 @@
     <p ng-show="articlesExists" id="resultNumber"><span>Din sökning gav {{ results }} resultat</span></p>
   </form>
 </header>
-
 <div class="wrapper">
-  <div ng-show="!articlesExists" id="noArticles">
+  <div ng-if="!articlesExists" id="noArticles">
     <h2>Det finns inga annonser här just nu</h2>
   </div>
   <table ng-show="articlesExists">
@@ -142,28 +141,31 @@
         </button>
       </th>
     </tr>
-    <tr ng-repeat="object in articles | orderBy:predicate:reverse" class="articles"
-        ng-click="go(object.Artikelid,object.Namn)">
-      <td>{{ object.Namn }}, {{ object.Namn2 }}</td>
-      <td> {{ object.Prisinklmoms }}</td>
-      <td> {{ object.PrisPerLiter }}</td>
-      <td> {{ object.Volymiml}} ml</td>
-      <td> {{ object.apk}}</td>
-      <td> {{ object.Alkoholhalt | number:2 }}%</td>
-      <td> {{ object.Varugrupp }}</td>
+    <tr ng-repeat="article in articles | orderBy:predicate:reverse" class="articles"
+        ng-click="toggleModal(article)">
+      <td>{{ article.Namn }}, {{ article.Namn2 }}</td>
+      <td> {{ article.Prisinklmoms }}</td>
+      <td> {{ article.PrisPerLiter }}</td>
+      <td> {{ article.Volymiml}} ml</td>
+      <td> {{ article.apk}}</td>
+      <td> {{ article.Alkoholhalt | number:2 }}%</td>
+      <td> {{ article.Varugrupp }}</td>
     </tr>
-    <tr ng-repeat="object in articlesBackup | orderBy:predicate:reverse" class="articles">
+    <tr ng-repeat="article in articlesBackup | orderBy:predicate:reverse" class="articles">
       <td>
-        <a ng-href="http://www.systembolaget.se/?searchquery={{ object.product_number}}" target="_blank">
-          {{ object.name }}, {{ object.name_2 }}
+        <a ng-href="http://www.systembolaget.se/?searchquery={{ article.product_number}}" target="_blank">
+          {{ article.name }}, {{ article.name_2 }}
         </a>
       </td>
-      <td> {{ object.price }}</td>
-      <td> {{ object.price_per_liter }}</td>
-      <td> {{ object.volume * 1000 }}</td>
-      <td> {{ object.apk}}</td>
-      <td> {{ object.alcohol * 100 | number:0 }}%</td>
-      <td> {{ object.tags[0].name }} <br/> {{ object.tags[1].name }}</td>
+      <td> {{ article.price }}</td>
+      <td> {{ article.price_per_liter }}</td>
+      <td> {{ article.volume * 1000 }}</td>
+      <td> {{ article.apk}}</td>
+      <td> {{ article.alcohol * 100 | number:0 }}%</td>
+      <td> {{ article.tags[0].name }} <br/> {{ article.tags[1].name }}</td>
     </tr>
   </table>
 </div>
+<product-directive show="modalShown">
+  <p>{{product}}</p>
+</product-directive>

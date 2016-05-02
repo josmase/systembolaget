@@ -10,7 +10,7 @@
 angular.module('systembolagetApp')
   .service('getArticlesService', function ($http) {
 
-    var server = 'http://localhost:8000/api/';
+    var server = 'https://api.josmase.xyz/api/';
 
     function handleSuccess(res) {
       return res.data;
@@ -26,22 +26,22 @@ angular.module('systembolagetApp')
       this.price = player.price;
       return $http({
         method: 'GET',
-        url: server+'products',
+        url: server + 'products',
         headers: {'Accept': 'application/json'},
         params: {
           PrisinklmomsMin: (this.price.min),
           PrisinklmomsMax: (this.price.max)
         }
-      }).then(handleSuccess,handleError('kunde inte nå servern'));
+      }).then(handleSuccess, handleError('kunde inte nå servern'));
     };
 
 
     this.getArticle = function (id) {
       return $http({
         method: 'GET',
-        url: server+'product/'+id,
+        url: server + 'product/' + id,
         headers: {'Accept': 'application/json'}
-      }).then(handleSuccess,handleError('kunde inte nå servern'));
+      }).then(handleSuccess, handleError('kunde inte nå servern'));
     };
 
     this.getArticles = function (search, sliders) {
@@ -49,7 +49,7 @@ angular.module('systembolagetApp')
       this.sliders = sliders;
       return $http({
         method: 'GET',
-        url: server+'products',
+        url: server + 'products',
         headers: {'Accept': 'application/json'},
         params: {
           apkMin: (this.sliders.apk.min),
@@ -62,7 +62,7 @@ angular.module('systembolagetApp')
           Varugrupp: (this.search.category)
 
         }
-      }).then(handleSuccess,handleError('kunde inte nå servern'));
+      }).then(handleSuccess, handleError('kunde inte nå servern'));
     };
 
     this.backupApi = function (sliders) {
