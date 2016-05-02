@@ -91,6 +91,7 @@
     <p ng-show="articlesExists" id="resultNumber"><span>Din sökning gav {{ results }} resultat</span></p>
   </form>
 </header>
+
 <div class="wrapper">
   <div ng-if="!articlesExists" id="noArticles">
     <h2>Det finns inga annonser här just nu</h2>
@@ -166,6 +167,34 @@
     </tr>
   </table>
 </div>
+
 <product-directive show="modalShown">
-  <p>{{product}}</p>
+  <div class="product-header">
+    <h1>{{product.Namn}} </h1>
+    <h4>{{product.Namn2}}</h4>
+    <a href="http://www.systembolaget.se/?searchquery={{product.Varnummer}}">Till systembolaget</a>
+  </div>
+  <div class="product-info">
+    <p>Alkohol per krona: {{product.apk}}</p>
+    <p>Pris: {{product.Prisinklmoms}} Kr</p>
+    <p>Volym: {{product.Volymiml}} ml</p>
+    <p>Pris per liter {{product.PrisPerLiter}} Kr</p>
+    <p>Säljstart {{product.Saljstart | date:medium}}</p>
+    <p ng-show="product.Slutlev">Slutade säljas {{product.Slutlev}}</p>
+    <p>Varugrupp: {{product.Varugrupp}}</p>
+    <p>Förpackning: {{product.Forpackning}}</p>
+    <p ng-show="product.Forslutning">Förslutning {{product.Forslutning}}</p>
+    <p ng-show="product.Ursprung">Ursprung: {{product.Ursprung}}</p>
+    <p>Ursprungsland: {{product.Ursprunglandnamn}}</p>
+    <p>Producent: {{product.Producent}}</p>
+    <p>Leverantör: {{product.Leverantor}}</p>
+    <p ng-show="product.Argang">Årgång: {{product.Argang}}</p>
+    <p ng-show="product.Provadargang">Provad år: {{product.Provadargang}}</p>
+    <p>Alkkoholhalt: {{product.Alkoholhalt}}%</p>
+    <p>Ekologisk: {{product.Ekologisk}}</p>
+    <p>Etisk: {{product.Etiskt}}</p>
+    <p>Koscher: {{product.Koscher}}</p>
+    <p ng-show="product.RavarorBeskrivning">Råvarubeskrivning: {{product.RavarorBeskrivning}}</p>
+  </div>
 </product-directive>
+

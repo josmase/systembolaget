@@ -28,11 +28,6 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/article/:articleId/:slug', {
-        templateUrl: 'views/article.html',
-        controller: 'ArticleCtrl',
-        controllerAs: 'article'
-      })
       .when('/slumpen', {
         templateUrl: 'views/slumpen.html',
         controller: 'SlumpenCtrl',
