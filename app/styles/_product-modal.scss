@@ -13,7 +13,7 @@
 .ng-modal-dialog {
   /* A centered div above the overlay with a box shadow. */
   z-index: 10000;
-  position: absolute;
+  position: fixed;
   width: 90%; /* Default */
 
   /* Center the dialog */
