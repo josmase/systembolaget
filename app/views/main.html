@@ -144,7 +144,7 @@
     </tr>
     <tr ng-repeat="article in articles | orderBy:predicate:reverse" class="articles"
         ng-click="toggleModal(article)">
-      <td>{{ article.Namn }}, {{ article.Namn2 }}</td>
+      <td>{{ article.Namn }}</td>
       <td> {{ article.Prisinklmoms }}</td>
       <td> {{ article.PrisPerLiter }}</td>
       <td> {{ article.Volymiml}} ml</td>
@@ -175,14 +175,15 @@
     <a href="http://www.systembolaget.se/?searchquery={{product.Varnummer}}">Till systembolaget</a>
   </div>
   <div class="product-info">
-    <p>Alkohol per krona: {{product.apk}}</p>
+    <p>Alkohol/kr: {{product.apk}}</p>
+    <p>Kr/l: {{product.PrisPerLiter}} Kr</p>
     <p>Pris: {{product.Prisinklmoms}} Kr</p>
     <p>Volym: {{product.Volymiml}} ml</p>
-    <p>Pris per liter {{product.PrisPerLiter}} Kr</p>
-    <p>Säljstart {{product.Saljstart | date:medium}}</p>
-    <p ng-show="product.Slutlev">Slutade säljas {{product.Slutlev}}</p>
+    <p>Alkkoholhalt: {{product.Alkoholhalt}}%</p>
+    <p ng-show="product.Slutlev">Säljstopp: {{product.Slutlev}}</p>
     <p>Varugrupp: {{product.Varugrupp}}</p>
     <p>Förpackning: {{product.Forpackning}}</p>
+    <p>Säljstart: {{product.Saljstart | date:medium}}</p>
     <p ng-show="product.Forslutning">Förslutning {{product.Forslutning}}</p>
     <p ng-show="product.Ursprung">Ursprung: {{product.Ursprung}}</p>
     <p>Ursprungsland: {{product.Ursprunglandnamn}}</p>
@@ -190,7 +191,6 @@
     <p>Leverantör: {{product.Leverantor}}</p>
     <p ng-show="product.Argang">Årgång: {{product.Argang}}</p>
     <p ng-show="product.Provadargang">Provad år: {{product.Provadargang}}</p>
-    <p>Alkkoholhalt: {{product.Alkoholhalt}}%</p>
     <p>Ekologisk: {{product.Ekologisk}}</p>
     <p>Etisk: {{product.Etiskt}}</p>
     <p>Koscher: {{product.Koscher}}</p>

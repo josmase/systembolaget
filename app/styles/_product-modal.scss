@@ -14,7 +14,7 @@
   /* A centered div above the overlay with a box shadow. */
   z-index: 10000;
   position: fixed;
-  width: 90%; /* Default */
+  width: 80%; /* Default */
 
   /* Center the dialog */
   top: 50%;
@@ -30,6 +30,11 @@
     background: white;
     padding: 10px;
     text-align: left;
+    p{
+      display: inline-block;
+      min-width: 45%;
+      margin-right: 10px;
+    }
   }
   .product-header {
     background-color: $primary;
