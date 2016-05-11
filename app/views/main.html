@@ -154,7 +154,7 @@
     </tr>
     <tr ng-repeat="article in articlesBackup | orderBy:predicate:reverse" class="articles">
       <td>
-        <a ng-href="http://www.systembolaget.se/?searchquery={{ article.product_number}}" target="_blank">
+        <a ng-href="http://www.systembolaget.se/sok-dryck?searchquery={{ article.product_number}}" target="_blank">
           {{ article.name }}, {{ article.name_2 }}
         </a>
       </td>
@@ -172,7 +172,7 @@
   <div class="product-header">
     <h1>{{product.Namn}} </h1>
     <h4>{{product.Namn2}}</h4>
-    <a href="http://www.systembolaget.se/?searchquery={{product.Varnummer}}">Till systembolaget</a>
+    <a href="http://www.systembolaget.se/sok-dryck?searchquery={{product.Varnummer}}">Till systembolaget</a>
   </div>
   <div class="product-info">
     <p>Alkohol/kr: {{product.apk}}</p>
