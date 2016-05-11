@@ -8,16 +8,18 @@
  * Controller of the systembolagetApp
  */
 angular.module('systembolagetApp')
-  .controller('MainCtrl', function ($scope, getArticlesService, $location) {
+  .controller('MainCtrl', function ($scope, getArticlesService, $location, $document) {
     $scope.search = {};
     $scope.sort = 'Name';
     $scope.predicate = 'apk';
     $scope.reverse = true;
     $scope.modalShown = false;
+
     $scope.toggleModal = function (product) {
-      console.log(product);
+      var body = $document.find('body');
       $scope.product = product;
       $scope.modalShown = !$scope.modalShown;
+      body.toggleClass("disableScroll", $scope.modalShown);
     };
     $scope.sliders = {
       price: {
