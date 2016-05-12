@@ -27,7 +27,6 @@ angular.module('systembolagetApp')
       var matched;
       if (typeof index === 'number' && typeof input !== 'undefined') {
         matched = matchAll(input, regex)[index];
-        console.log(matchAll(input, regex));
         if (matched[4] === '-') {
           return 'Stängt';
         }
