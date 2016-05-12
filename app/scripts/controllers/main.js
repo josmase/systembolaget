@@ -96,6 +96,6 @@ angular.module('systembolagetApp')
       );
     }
 
-
+    $scope.loadData = loadData();
     loadData();
   });
