@@ -21,7 +21,6 @@ angular.module('systembolagetApp')
       }
 
       function getStoresLatLon(position) {
-        console.log(position);
         return $http({
           method: 'GET',
           url: server + 'stores',
