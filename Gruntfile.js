@@ -140,10 +140,6 @@ module.exports = function (grunt) {
 
     // Make sure code styles are up to par
     jscs: {
-      options: {
-        config: '.jscsrc',
-        verbose: true
-      },
       all: {
         src: [
           'Gruntfile.js',
