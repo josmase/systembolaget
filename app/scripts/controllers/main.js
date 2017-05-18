@@ -19,7 +19,7 @@ angular.module('systembolagetApp')
       var body = $document.find('body');
       $scope.product = product;
       $scope.modalShown = !$scope.modalShown;
-      body.toggleClass("disableScroll", $scope.modalShown);
+      body.toggleClass('disableScroll', $scope.modalShown);
     };
     $scope.sliders = {
       price: {
