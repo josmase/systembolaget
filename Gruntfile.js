@@ -375,7 +375,7 @@ module.exports = function (grunt) {
       ngtemplates: {
         dist: {
           options: {
-            module: 'festApp',
+            module: 'systembolagetApp',
             htmlmin: '<%= htmlmin.dist.options %>',
             usemin: 'scripts/scripts.js'
           },
@@ -418,7 +418,7 @@ module.exports = function (grunt) {
               '*.html',
               'images/{,*/}*.{webp}',
               'styles/fonts/{,*/}*.*',
-              'manifest.json'
+              'manisystembolaget.json'
             ]
           }, {
             expand: true,
