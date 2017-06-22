@@ -111,13 +111,6 @@
         </button>
       </th>
       <th>
-        <button ng-click="order('price_per_liter')">
-          Pris/liter
-          <span class="sortorder" ng-show="predicate === 'price_per_liter'" ng-class="{reverse:reverse}"></span>
-        </button>
-
-      </th>
-      <th>
         <button ng-click="order('volume')">
           Volym
           <span class="sortorder" ng-show="predicate === 'volume'" ng-class="{reverse:reverse}"></span>
@@ -146,7 +139,6 @@
         ng-click="toggleModal(article)">
       <td>{{ article.Namn }}</td>
       <td> {{ article.Prisinklmoms }}</td>
-      <td> {{ article.PrisPerLiter }}</td>
       <td> {{ article.Volymiml}} ml</td>
       <td> {{ article.apk}}</td>
       <td> {{ article.Alkoholhalt | number:2 }}%</td>
@@ -159,7 +151,6 @@
         </a>
       </td>
       <td> {{ article.price }}</td>
-      <td> {{ article.price_per_liter }}</td>
       <td> {{ article.volume * 1000 }}</td>
       <td> {{ article.apk}}</td>
       <td> {{ article.alcohol * 100 | number:0 }}%</td>

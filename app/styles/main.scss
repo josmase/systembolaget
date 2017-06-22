@@ -32,7 +32,6 @@ table {
     font-weight: normal;
     border-bottom: 1px solid $divider;
     td {
-      word-break: break-all;
       padding: 7px;
       border-width: 0;
       margin: 0;
@@ -112,15 +111,16 @@ table {
   overflow: hidden;
 }
 
-@media screen and(max-width: 430px) {
+@media screen and(max-width: 500px) {
   table {
     tr {
       th:first-child, td:first-child {
         max-width: 100px;
         word-wrap: break-word;
       }
-      th:nth-child(4), td:nth-child(4) {
-        display: none;
+      th:last-child, td:last-child {
+        max-width: 50px;
+        word-wrap: break-word;
       }
       th:nth-child(3), td:nth-child(3) {
         display: none;
