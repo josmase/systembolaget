@@ -10,7 +10,7 @@
 angular.module('systembolagetApp')
   .service('getArticlesService', function ($http) {
 
-    var server = 'https://api.josmase.se/api/';
+    var server = 'https://api.josmase.se/systemet/';
 
     function handleSuccess(res) {
       return res.data;

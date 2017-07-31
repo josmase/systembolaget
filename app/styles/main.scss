@@ -36,6 +36,10 @@ table {
       border-width: 0;
       margin: 0;
       color: $primaryText;
+      a{
+        color: purple;
+        text-decoration: initial;
+      }
     }
     th {
       padding: 0;

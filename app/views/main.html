@@ -137,7 +137,7 @@
     </tr>
     <tr ng-repeat="article in articles | orderBy:predicate:reverse" class="articles"
         ng-click="toggleModal(article)">
-      <td>{{ article.Namn }}</td>
+      <td>  <a href="http://www.systembolaget.se/sok-dryck?searchquery={{article.Varnummer}}"> {{ article.Namn }}</td>
       <td> {{ article.Prisinklmoms }}</td>
       <td> {{ article.Volymiml}} ml</td>
       <td> {{ article.apk}}</td>

@@ -9,7 +9,7 @@
  */
 angular.module('systembolagetApp')
   .service('storesService', function ($http) {
-      var server = 'https://api.josmase.se/api/';
+      var server = 'https://api.josmase.se/systemet/';
       var functions = {};
 
       function handleSuccess(result) {
